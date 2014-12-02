@@ -4,7 +4,7 @@ class Neon_Dualies extends Dualies;
 
 DefaultProperties
 {
-Skins[0] = Shader'DUB_Neon_Weapons.pistol.Ninemm_SHDR'
-AttachmentClass=Class'DUB_NeonWeapons.Neon_DualiesAttachment'
-PickupClass=Class'DUB_NeonWeapons.Neon_DualiesPickup';
+	Skins[0] = Shader'DUB_Neon_Weapons.pistol.Ninemm_SHDR'
+	AttachmentClass=Class'DUB_NeonWeapons.Neon_DualiesAttachment'
+	PickupClass=Class'DUB_NeonWeapons.Neon_DualiesPickup';
 }

@@ -4,5 +4,5 @@ class Neon_MAC10Attachment extends MAC10Attachment;
 
 DefaultProperties
 {
-Skins[0]=Shader'DUB_Neon_Weapons.MAC10.MAC10_3rd_SHDR';
+	Skins[0]=Shader'DUB_Neon_Weapons.MAC10.MAC10_3rd_SHDR';
 }

@@ -4,6 +4,6 @@ class Neon_DeaglePickup extends DeaglePickup;
 
 DefaultProperties
 {
-Skins[0]=Shader'DUB_Neon_Weapons.Deagle.Deagle_3rd_SHDR';
-InventoryType=Class'DUB_NeonWeapons.Neon_Deagle';
+	Skins[0]=Shader'DUB_Neon_Weapons.Deagle.Deagle_3rd_SHDR';
+	InventoryType=Class'DUB_NeonWeapons.Neon_Deagle';
 }

@@ -4,7 +4,7 @@ class Neon_DualDeagle extends DualDeagle;
 
 DefaultProperties
 {
-Skins[0] = Shader'DUB_Neon_Weapons.Deagle.Deagle_SHDR'
-AttachmentClass=Class'DUB_NeonWeapons.Neon_DualDeagleAttachment'
-PickupClass=Class'DUB_NeonWeapons.Neon_DualDeaglePickup';
+	Skins[0] = Shader'DUB_Neon_Weapons.Deagle.Deagle_SHDR'
+	AttachmentClass=Class'DUB_NeonWeapons.Neon_DualDeagleAttachment'
+	PickupClass=Class'DUB_NeonWeapons.Neon_DualDeaglePickup';
 }

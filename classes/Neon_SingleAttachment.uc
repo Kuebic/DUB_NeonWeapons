@@ -4,5 +4,5 @@ class Neon_SingleAttachment extends SingleAttachment;
 
 DefaultProperties
 {
-Skins[0]=Shader'DUB_Neon_Weapons.pistol.Ninemm_3rd_SHDR';
+	Skins[0]=Shader'DUB_Neon_Weapons.pistol.Ninemm_3rd_SHDR';
 }

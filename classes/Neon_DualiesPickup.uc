@@ -4,6 +4,6 @@ class Neon_DualiesPickup extends DualiesPickup;
 
 DefaultProperties
 {
-Skins[0]=Shader'DUB_Neon_Weapons.pistol.Ninemm_3rd_SHDR';
-InventoryType=Class'DUB_NeonWeapons.Neon_Dualies';
+	Skins[0]=Shader'DUB_Neon_Weapons.pistol.Ninemm_3rd_SHDR';
+	InventoryType=Class'DUB_NeonWeapons.Neon_Dualies';
 }

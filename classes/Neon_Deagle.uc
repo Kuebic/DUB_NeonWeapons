@@ -4,7 +4,7 @@ class Neon_Deagle extends Deagle;
 
 DefaultProperties
 {
-SkinRefs[0] = "DUB_Neon_Weapons.Deagle.Deagle_SHDR"
-AttachmentClass=Class'DUB_NeonWeapons.Neon_DeagleAttachment'
-PickupClass=Class'DUB_NeonWeapons.Neon_DeaglePickup';
+	SkinRefs[0] = "DUB_Neon_Weapons.Deagle.Deagle_SHDR"
+	AttachmentClass=Class'DUB_NeonWeapons.Neon_DeagleAttachment'
+	PickupClass=Class'DUB_NeonWeapons.Neon_DeaglePickup';
 }

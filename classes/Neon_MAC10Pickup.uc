@@ -4,6 +4,6 @@ class Neon_MAC10Pickup extends MAC10Pickup;
 
 DefaultProperties
 {
-Skins[0]=Shader'DUB_Neon_Weapons.MAC10.MAC10_3rd_SHDR';
-InventoryType=Class'DUB_NeonWeapons.Neon_MAC10MP';
+	Skins[0]=Shader'DUB_Neon_Weapons.MAC10.MAC10_3rd_SHDR';
+	InventoryType=Class'DUB_NeonWeapons.Neon_MAC10MP';
 }

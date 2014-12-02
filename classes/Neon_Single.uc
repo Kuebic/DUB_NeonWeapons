@@ -4,7 +4,7 @@ class Neon_Single extends Single;
 
 DefaultProperties
 {
-Skins[0] = Shader'DUB_Neon_Weapons.pistol.Ninemm_SHDR'
-AttachmentClass=Class'DUB_NeonWeapons.Neon_SingleAttachment'
-PickupClass=Class'DUB_NeonWeapons.Neon_SinglePickup';
+	Skins[0] = Shader'DUB_Neon_Weapons.pistol.Ninemm_SHDR'
+	AttachmentClass=Class'DUB_NeonWeapons.Neon_SingleAttachment'
+	PickupClass=Class'DUB_NeonWeapons.Neon_SinglePickup';
 }

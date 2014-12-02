@@ -4,5 +4,5 @@ class Neon_DeagleAttachment extends DeagleAttachment;
 
 DefaultProperties
 {
-Skins[0]=Shader'DUB_Neon_Weapons.Deagle.Deagle_3rd_SHDR';
+	Skins[0]=Shader'DUB_Neon_Weapons.Deagle.Deagle_3rd_SHDR';
 }

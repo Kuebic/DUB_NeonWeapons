@@ -4,6 +4,6 @@ class Neon_SinglePickup extends SinglePickup;
 
 DefaultProperties
 {
-Skins[0]=Shader'DUB_Neon_Weapons.pistol.Ninemm_3rd_SHDR';
-InventoryType=Class'DUB_NeonWeapons.Neon_Single';
+	Skins[0]=Shader'DUB_Neon_Weapons.pistol.Ninemm_3rd_SHDR';
+	InventoryType=Class'DUB_NeonWeapons.Neon_Single';
 }

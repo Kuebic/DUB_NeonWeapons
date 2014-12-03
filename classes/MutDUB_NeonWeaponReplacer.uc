@@ -35,6 +35,7 @@ function bool CheckReplacement(Actor Other, out byte bSuperRelevant)
 	local KFWeapon NineMMReplacement;
 	local KFWeapon DeagleReplacement;
 	
+	//Change Loading equipment
 	if(KFHumanPawn(Other)!=None)
 	{
 		KFHumanPawn(Other).RequiredEquipment[0] = "KFMod.Knife";
@@ -44,6 +45,7 @@ function bool CheckReplacement(Actor Other, out byte bSuperRelevant)
 		KFHumanPawn(Other).RequiredEquipment[4] = "KFMod.Welder";
 	}
 	
+	//Change random weapon spawns
 	if(Other.IsA('KFRandomItemSpawn') && !Other.IsA('Neon_RandomItemSpawn'))
 	{
 		ReplaceWith(Other, "DUB_NeonWeapons.Neon_RandomItemSpawn");
@@ -62,6 +64,7 @@ function bool CheckReplacement(Actor Other, out byte bSuperRelevant)
             return false;
         }
     }
+	//hack fix for the dualdeagle-returning-normal-handcannon trader issue...
 	if ( Other.Class==Class'Deagle' )
     {
         KFHP = KFHumanPawn(Deagle(Other).Instigator);
@@ -73,6 +76,7 @@ function bool CheckReplacement(Actor Other, out byte bSuperRelevant)
             return false;
         }
     }
+	//replace weapons I want to replace
 	if (KFWeaponPickup(Other) != none || KFAmmoPickup(Other) != none) 
 	{
 		i = shouldReplace(Other.class, pickupReplacements);

@@ -8,18 +8,13 @@ function inventory SpawnCopy(pawn Other)
 
 	for ( I = Other.Inventory; I != none; I = I.Inventory )
 	{
-        // can't just cast to Deagle to check, because golden deagle is a deagle
-        // but we don't want to take your golden deagle and give you dual
-        // normal deagles
-		//if( I.Class == class'Deagle' )
-		if(Neon_Deagle(I)!=None)
+		if( Neon_Deagle (I) != None )
 		{
-		
 			if( Inventory != none )
 				Inventory.Destroy();
 			InventoryType = Class'DUB_NeonWeapons.Neon_DualDeagle';
             AmmoAmount[0] += Neon_Deagle(I).AmmoAmount(0);
-            MagAmmoRemaining += Deagle(I).MagAmmoRemaining;
+            MagAmmoRemaining += Neon_Deagle(I).MagAmmoRemaining;
 			I.Destroyed();
 			I.Destroy();
 			Return Super.SpawnCopy(Other);
@@ -27,7 +22,7 @@ function inventory SpawnCopy(pawn Other)
 	}
 
 	InventoryType = Default.InventoryType;
-	Return Super.SpawnCopy(Other);
+	Return Super(KFWeaponPickup).SpawnCopy(Other);
 }
 
 function bool CheckCanCarry(KFHumanPawn Hm) {

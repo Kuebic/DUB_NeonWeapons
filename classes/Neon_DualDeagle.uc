@@ -2,6 +2,55 @@ class Neon_DualDeagle extends DualDeagle;
 
 #exec obj load file="DUB_Neon_Weapons.utx"
 
+function GiveTo( pawn Other, optional Pickup Pickup )
+{
+	local Inventory I;
+	local int OldAmmo;
+	local bool bNoPickup;
+
+	MagAmmoRemaining = 0;
+
+	For( I = Other.Inventory; I != None; I =I.Inventory )
+	{
+		if ( Deagle(I) != none )
+		{
+			if( WeaponPickup(Pickup)!= none )
+			{
+				WeaponPickup(Pickup).AmmoAmount[0] += Weapon(I).AmmoAmount(0);
+			}
+			else
+			{
+				OldAmmo = Weapon(I).AmmoAmount(0);
+				bNoPickup = true;
+			}
+
+			MagAmmoRemaining = Deagle(I).MagAmmoRemaining;
+
+			I.Destroyed();
+			I.Destroy();
+
+			Break;
+		}
+	}
+
+	if ( KFWeaponPickup(Pickup) != None && Pickup.bDropped )
+	{
+		MagAmmoRemaining = Clamp(MagAmmoRemaining + KFWeaponPickup(Pickup).MagAmmoRemaining, 0, MagCapacity);
+	}
+	else
+	{
+		MagAmmoRemaining = Clamp(MagAmmoRemaining + Class'DUB_NeonWeapons.Neon_Deagle'.Default.MagCapacity, 0, MagCapacity);
+	}
+
+	Super(Weapon).GiveTo(Other, Pickup);
+
+	if ( bNoPickup )
+	{
+		AddAmmo(OldAmmo, 0);
+		Clamp(Ammo[0].AmmoAmount, 0, MaxAmmo(0));
+	}
+}
+
 function bool HandlePickupQuery( pickup Item )
 {
 	if ( Item.InventoryType==Class'DUB_NeonWeapons.Neon_Deagle' || Item.InventoryType==Class'GoldenDeagle' )

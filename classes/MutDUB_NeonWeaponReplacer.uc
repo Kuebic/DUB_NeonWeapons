@@ -44,16 +44,10 @@ function bool CheckReplacement(Actor Other, out byte bSuperRelevant)
 		KFHumanPawn(Other).RequiredEquipment[4] = "KFMod.Welder";
 	}
 	
-	if(KFRandomItemSpawn(Other) !=None)
+	if(Other.IsA('KFRandomItemSpawn') && !Other.IsA('Neon_RandomItemSpawn'))
 	{
-		KFRandomItemSpawn(Other).PickupClasses[0]=Class'DUB_NeonWeapons.Neon_DualiesPickup';
-		KFRandomItemSpawn(Other).PickupClasses[1]=Class'KFMod.ShotgunPickup';
-		KFRandomItemSpawn(Other).PickupClasses[2]=Class'DUB_NeonWeapons.Neon_BullpupPickup';
-		KFRandomItemSpawn(Other).PickupClasses[3]=Class'DUB_NeonWeapons.Neon_DeaglePickup';
-		KFRandomItemSpawn(Other).PickupClasses[4]=Class'KFMod.WinchesterPickup';
-		KFRandomItemSpawn(Other).PickupClasses[5]=Class'KFMod.AxePickup';
-		KFRandomItemSpawn(Other).PickupClasses[6]=Class'KFMod.MachetePickup';
-		KFRandomItemSpawn(Other).PickupClasses[7]=Class'KFMod.Vest';
+		ReplaceWith(Other, "DUB_NeonWeapons.Neon_RandomItemSpawn");
+		Return false;
 	}
 	
 	//hack fix for the dualies-returning-normal-9mm trader issue...

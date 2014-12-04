@@ -11,9 +11,39 @@ var class<LevelRules> levelRules;
 var KFGameType gameType;
 
 
+simulated function Tick(float DeltaTime) 
+{
+	local int i;
+	local KFLevelRules KFLR;
+	local PlayerController localController;
+	
+	localController= Level.GetLocalPlayerController();
+	if (localController != none) {
+		foreach DynamicActors(class'KFMod.KFLevelRules', KFLR)
+		for (i = 0; i < ArrayCount(KFLR.ShrpItemForSale); i++){
+			if (KFLR.ShrpItemForSale[i] == class'KFMod.DualiesPickup')
+				KFLR.ShrpItemForSale[i] = class'Dub_NeonWeapons.Neon_DualiesPickup';
+			if (KFLR.ShrpItemForSale[i] == class'KFMod.DeaglePickup')
+				KFLR.ShrpItemForSale[i] = class'Dub_NeonWeapons.Neon_DeaglePickup';
+			if (KFLR.ShrpItemForSale[i] == class'KFMod.DualDeaglePickup')
+				KFLR.ShrpItemForSale[i] = class'Dub_NeonWeapons.Neon_DualDeaglePickup';
+		}
+		for (i = 0; i < ArrayCount(KFLR.CommItemForSale); i++){
+			if (KFLR.CommItemForSale[i] == class'KFMod.BullpupPickup')
+				KFLR.CommItemForSale[i] = class'Dub_NeonWeapons.Neon_BullpupPickup';
+		}
+		for (i = 0; i < ArrayCount(KFLR.FireItemForSale); i++){
+			if (KFLR.ItemForSale[i] == class'KFMod.MAC10Pickup')
+				KFLR.ItemForSale[i] = class'Dub_NeonWeapons.Neon_MAC10Pickup';
+		}
+		
+	}
+	Disable('Tick');
+}
+
 function PostBeginPlay() 
 {
-	Super.PostBeginPlay();
+	//Super.PostBeginPlay();
 	
 	gameType= KFGameType(Level.Game);
 	if (gameType == none) 
@@ -58,7 +88,7 @@ function Timer()
 
 function bool CheckReplacement(Actor Other, out byte bSuperRelevant) 
 {
-	local int i, j;
+	local int i;
 	local KFHumanPawn KFHP;
 	local KFWeapon NineMMReplacement;
 	local KFWeapon DeagleReplacement;

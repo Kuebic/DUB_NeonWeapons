@@ -20,28 +20,48 @@ simulated function Tick(float DeltaTime)
 	localController= Level.GetLocalPlayerController();
 	if (localController != none) {
 		foreach DynamicActors(class'KFMod.KFLevelRules', KFLR)
-		for (i = 0; i < ArrayCount(KFLR.ShrpItemForSale); i++){
+		for (i = 0; i < KFLR.ShrpItemForSale.length; i++){
 			if (KFLR.ShrpItemForSale[i] == class'KFMod.DualiesPickup')
 				KFLR.ShrpItemForSale[i] = class'Dub_NeonWeapons.Neon_DualiesPickup';
 			if (KFLR.ShrpItemForSale[i] == class'KFMod.DeaglePickup')
 				KFLR.ShrpItemForSale[i] = class'Dub_NeonWeapons.Neon_DeaglePickup';
 			if (KFLR.ShrpItemForSale[i] == class'KFMod.DualDeaglePickup')
 				KFLR.ShrpItemForSale[i] = class'Dub_NeonWeapons.Neon_DualDeaglePickup';
+			if (KFLR.ShrpItemForSale[i] == class'KFMod.WinchesterPickup')
+				KFLR.ShrpItemForSale[i] = Class'DUB_NeonWeapons.Neon_WinchesterPickup';
 		}
-		for (i = 0; i < ArrayCount(KFLR.CommItemForSale); i++){
+		for (i = 0; i < KFLR.CommItemForSale.length; i++){
 			if (KFLR.CommItemForSale[i] == class'KFMod.BullpupPickup')
 				KFLR.CommItemForSale[i] = class'Dub_NeonWeapons.Neon_BullpupPickup';
 		}
-		for (i = 0; i < ArrayCount(KFLR.FireItemForSale); i++){
-			if (KFLR.ItemForSale[i] == class'KFMod.MAC10Pickup')
-				KFLR.ItemForSale[i] = class'Dub_NeonWeapons.Neon_MAC10Pickup';
+		for (i = 0; i < KFLR.FireItemForSale.length; i++){
+			if (KFLR.FireItemForSale[i] == class'KFMod.MAC10Pickup')
+				KFLR.FireItemForSale[i] = class'Dub_NeonWeapons.Neon_MAC10Pickup';
+		}
+		for (i = 0; i < KFLR.BersItemForSale.length; i++){
+			if (KFLR.BersItemForSale[i] == class'KFMod.KnifePickup')
+				KFLR.BersItemForSale[i] = class'Dub_NeonWeapons.Neon_KnifePickup';
+			if (KFLR.BersItemForSale[i] == class'KFMod.MachetePickup')
+				KFLR.BersItemForSale[i] = class'Dub_NeonWeapons.Neon_MachetePickup';
+			if (KFLR.BersItemForSale[i] == class'KFMod.AxePickup')
+				KFLR.BersItemForSale[i] = class'Dub_NeonWeapons.Neon_AxePickup';
+			if (KFLR.BersItemForSale[i] == class'KFMod.KatanaPickup')
+				KFLR.BersItemForSale[i] = class'Dub_NeonWeapons.Neon_KatanaPickup';
+		}
+		for (i = 0; i < KFLR.SuppItemForSale.length; i++){
+			if (KFLR.SuppItemForSale[i] == class'KFMod.ShotgunPickup')
+				KFLR.SuppItemForSale[i] = class'Dub_NeonWeapons.Neon_ShotgunPickup';
+			if (KFLR.SuppItemForSale[i] == class'KFMod.BoomStickPickup')
+				KFLR.SuppItemForSale[i] = class'Dub_NeonWeapons.Neon_BoomStickPickup';
+			if (KFLR.SuppItemForSale[i] == class'KFMod.AA12Pickup')
+				KFLR.SuppItemForSale[i] = class'Dub_NeonWeapons.Neon_AA12Pickup';
 		}
 		
 	}
 	Disable('Tick');
 }
 
-function PostBeginPlay() 
+simulated function PostBeginPlay() 
 {
 	//Super.PostBeginPlay();
 	
@@ -86,7 +106,7 @@ function Timer()
 	gameType.KFLRules= spawn(levelRules);
 }
 
-function bool CheckReplacement(Actor Other, out byte bSuperRelevant) 
+simulated function bool CheckReplacement(Actor Other, out byte bSuperRelevant) 
 {
 	local int i;
 	local KFHumanPawn KFHP;
@@ -96,7 +116,7 @@ function bool CheckReplacement(Actor Other, out byte bSuperRelevant)
 	//Change Loading equipment
 	if(KFHumanPawn(Other)!=None)
 	{
-		KFHumanPawn(Other).RequiredEquipment[0] = "KFMod.Knife";
+		KFHumanPawn(Other).RequiredEquipment[0] = "DUB_NeonWeapons.Neon_Knife";
 		KFHumanPawn(Other).RequiredEquipment[1] = "DUB_NeonWeapons.Neon_Single";
 		KFHumanPawn(Other).RequiredEquipment[2] = "KFMod.Frag";
 		KFHumanPawn(Other).RequiredEquipment[3] = "KFMod.Syringe";
@@ -137,22 +157,33 @@ function bool CheckReplacement(Actor Other, out byte bSuperRelevant)
 	//replace weapons I want to replace
 	if (KFWeaponPickup(Other) != none || KFAmmoPickup(Other) != none) 
 	{
-		i = shouldReplace(Other.class, pickupReplacements);
+		i = shouldReplace(String(Other.class), pickupReplacements);
 		if (i != -1) 
 		{
 			ReplaceWith(Other,String(pickupReplacements[i].newClass));
 			return false;
 		}
 	}
+	
+	else if (KFWeapon(Other) != none)
+	{
+		i = shouldReplace(String(KFWeapon(Other).PickupClass.class), pickupReplacements);
+		if (i != -1) 
+		{
+			ReplaceWith(Other,String(class<Pickup>(pickupReplacements[i].newClass).default.InventoryType));
+			return false;
+		}
+	}
 	return super.CheckReplacement(Other, bSuperRelevant);
 }
-function int shouldReplace(class<Object> classRef, array<ReplacementPair> replacementArray) 
+simulated function int shouldReplace(string objectName, array<ReplacementPair> replacementArray) 
 {
 	local int i, replaceIndex;
+	
 	replaceIndex= -1;
 	for(i=0; replaceIndex == -1 && i < replacementArray.length; i++) 
 	{
-		if (classRef == replacementArray[i].oldClass) 
+		if (objectName ~= String(replacementArray[i].oldClass))
 		{
 			replaceIndex= i;
 		}
@@ -178,6 +209,28 @@ defaultproperties
 	pickupReplacements(3)=(oldClass=class'KFMod.DualDeaglePickup',newClass=class'DUB_NeonWeapons.Neon_DualDeaglePickup')
 	pickupReplacements(4)=(oldClass=class'KFMod.BullpupPickup',newClass=class'DUB_NeonWeapons.Neon_BullpupPickup')
 	pickupReplacements(5)=(oldClass=class'KFMod.Mac10Pickup',newClass=class'DUB_NeonWeapons.Neon_Mac10Pickup')
+	pickupReplacements(6)=(oldClass=class'KFMod.KnifePickup',newClass=class'DUB_NeonWeapons.Neon_KnifePickup')
+	pickupReplacements(7)=(oldClass=class'KFMod.MachetePickup',newClass=class'DUB_NeonWeapons.Neon_MachetePickup')
+	pickupReplacements(8)=(oldClass=class'KFMod.AxePickup',newClass=class'DUB_NeonWeapons.Neon_AxePickup')
+	pickupReplacements(9)=(oldClass=class'KFMod.AA12Pickup',newClass=class'DUB_NeonWeapons.Neon_AA12Pickup')
+	pickupReplacements(10)=(oldClass=class'KFMod.BoomStickPickup',newClass=class'DUB_NeonWeapons.Neon_BoomstickPickup')
+	pickupReplacements(11)=(oldClass=class'KFMod.ShotgunPickup',newClass=class'DUB_NeonWeapons.Neon_ShotgunPickup')
+	pickupReplacements(12)=(oldClass=class'KFMod.WinchesterPickup',newClass=class'DUB_NeonWeapons.Neon_WinchesterPickup')
+/*	
+	weaponReplacements(0)=(oldClass=class'KFMod.Single',newClass=class'DUB_NeonWeapons.Neon_Single')
+	weaponReplacements(1)=(oldClass=class'KFMod.Dualies',newClass=class'DUB_NeonWeapons.Neon_Dualies')
+	weaponReplacements(2)=(oldClass=class'KFMod.Deagle',newClass=class'DUB_NeonWeapons.Neon_Deagle')
+	weaponReplacements(3)=(oldClass=class'KFMod.DualDeagle',newClass=class'DUB_NeonWeapons.Neon_DualDeagle')
+	weaponReplacements(4)=(oldClass=class'KFMod.Bullpup',newClass=class'DUB_NeonWeapons.Neon_Bullpup')
+	weaponReplacements(5)=(oldClass=class'KFMod.Mac10MP',newClass=class'DUB_NeonWeapons.Neon_Mac10MP')
+	weaponReplacements(6)=(oldClass=class'KFMod.Knife',newClass=class'DUB_NeonWeapons.Neon_Knife')
+	weaponReplacements(7)=(oldClass=class'KFMod.Machete',newClass=class'DUB_NeonWeapons.Neon_Machete')
+	weaponReplacements(8)=(oldClass=class'KFMod.Axe',newClass=class'DUB_NeonWeapons.Neon_Axe')
+	weaponReplacements(9)=(oldClass=class'KFMod.AA12AutoShotgun',newClass=class'DUB_NeonWeapons.Neon_AA12AutoShotgun')
+	weaponReplacements(10)=(oldClass=class'KFMod.BoomStick',newClass=class'DUB_NeonWeapons.Neon_Boomstick')
+	weaponReplacements(11)=(oldClass=class'KFMod.Shotgun',newClass=class'DUB_NeonWeapons.Neon_Shotgun')
+	weaponReplacements(12)=(oldClass=class'KFMod.Winchester',newClass=class'DUB_NeonWeapons.Neon_Winchester')
+*/	
 //    Vet_Array(0)=Class'DUB_NeonWeapons.NeonVetSupportSpec'
 //    Vet_Array(1)=Class'DUB_NeonWeapons.NeonVetSharpshooter'
 //    Vet_Array(2)=Class'DUB_NeonWeapons.NeonVetCommando'

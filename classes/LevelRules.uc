@@ -22,21 +22,21 @@ defaultproperties {
 	MediItemForSale[5 ]=Class'KFMod.KrissMPickup'          //Medic
 	MediItemForSale[6 ]=Class'KFMod.NeonKrissMPickup'      //Medic
 
-	SuppItemForSale[0 ]=Class'KFMod.ShotgunPickup'		   	//Support
+	SuppItemForSale[0 ]=Class'DUB_NeonWeapons.Neon_ShotgunPickup'		   	//Support
 	SuppItemForSale[1 ]=Class'KFMod.CamoShotgunPickup'     	//Support
-	SuppItemForSale[2 ]=Class'KFMod.BoomStickPickup'       	//Support
+	SuppItemForSale[2 ]=Class'DUB_NeonWeapons.Neon_BoomStickPickup'       	//Support
 	SuppItemForSale[3 ]=Class'KFMod.KSGPickup'			  	//Support
 	SuppItemForSale[4 ]=Class'KFMod.NeonKSGPickup'		   	//Support
 	SuppItemForSale[5 ]=Class'KFMod.NailGunPickup'         	//Support
 	SuppItemForSale[6 ]=Class'KFMod.SPShotGunPickup'       	//Support
 	SuppItemForSale[7 ]=Class'KFMod.BenelliPickup'	       	//Support
 	SuppItemForSale[8 ]=Class'KFMod.GoldenBenelliPickup'   	//Support
-	SuppItemForSale[9 ]=Class'KFMod.AA12Pickup'			   	//Support
+	SuppItemForSale[9 ]=Class'DUB_NeonWeapons.Neon_AA12Pickup'			   	//Support
 	SuppItemForSale[10]=Class'KFMod.GoldenAA12Pickup'      	//Support
 
 	//ShrpItemForSale[0 ]=Class'DUB_NeonWeapons.Neon_SinglePickup'	//Sharpshooter
 	ShrpItemForSale[0 ]=Class'DUB_NeonWeapons.Neon_DualiesPickup'	//Sharpshooter
-	ShrpItemForSale[1 ]=Class'KFMod.WinchesterPickup'	   //Sharpshooter
+	ShrpItemForSale[1 ]=Class'DUB_NeonWeapons.Neon_WinchesterPickup'	   //Sharpshooter
 	ShrpItemForSale[2 ]=Class'KFMod.Magnum44Pickup'		   //Sharpshooter
 	ShrpItemForSale[3 ]=Class'DUB_NeonWeapons.Neon_DeaglePickup'	//Sharpshooter
 	ShrpItemForSale[4 ]=Class'KFMod.GoldenDeaglePickup'    //Sharpshooter
@@ -64,10 +64,10 @@ defaultproperties {
 	CommItemForSale[11]=Class'KFMod.NeonSCARMK17Pickup'		    //Commando
 	CommItemForSale[12]=Class'KFMod.FNFAL_ACOG_Pickup'	        //Commando
 
-	BersItemForSale[0 ]=Class'KFMod.KnifePickup'				//Berserker
-	BersItemForSale[1 ]=Class'KFMod.MachetePickup'				//Berserker
-	BersItemForSale[2 ]=Class'KFMod.AxePickup'					//Berserker
-	BersItemForSale[3 ]=Class'KFMod.KatanaPickup'				//Berserker
+	BersItemForSale[0 ]=Class'DUB_NeonWeapons.Neon_KnifePickup'				//Berserker
+	BersItemForSale[1 ]=Class'DUB_NeonWeapons.Neon_MachetePickup'				//Berserker
+	BersItemForSale[2 ]=Class'DUB_NeonWeapons.Neon_AxePickup'					//Berserker
+	BersItemForSale[3 ]=Class'DUB_NeonWeapons.Neon_KatanaPickup'				//Berserker
 	BersItemForSale[4 ]=Class'KFMod.GoldenKatanaPickup'		    //Berserker
 	BersItemForSale[5 ]=Class'KFMod.ScythePickup'               //Berserker
 	BersItemForSale[6 ]=Class'KFMod.ChainsawPickup'				//Berserker

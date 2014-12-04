@@ -11,7 +11,7 @@ var class<LevelRules> levelRules;
 var KFGameType gameType;
 
 
-simulated function PostBeginPlay() 
+function PostBeginPlay() 
 {
 	Super.PostBeginPlay();
 	
@@ -21,6 +21,9 @@ simulated function PostBeginPlay()
 		Destroy();
 		return;
 	}
+	if (Level.NetMode != NM_Standalone)
+		AddToPackageMap("Dub_NeonWeapons");
+		
 	/* //My attempt at modifying perk bonuses... maybe later
 	if (gameType != None)
 	{
@@ -31,7 +34,6 @@ simulated function PostBeginPlay()
 		}
 	}
 	*/
-	AddToPackageMap();
 	SetTimer(1.0, false);
 }
 /* //My attempt at modifying perk bonuses... maybe later
@@ -48,7 +50,7 @@ static function Class<KFVeterancyTypes> GetVetReplacement(Class<KFVeterancyTypes
 	return VetSkill;
 }
 */
-simulated function Timer() 
+function Timer() 
 {
 	gameType.KFLRules.destroy();
 	gameType.KFLRules= spawn(levelRules);
@@ -130,7 +132,7 @@ function int shouldReplace(class<Object> classRef, array<ReplacementPair> replac
 
 defaultproperties
 {
-    GroupName="KF-DUBNeon Weapons Replacer"
+    GroupName="KF-DUBNeonWeapons"
     FriendlyName="DUB Neon Weapon Replacer"
     Description="Replaces many weapon skins with neon equivalence."
 	

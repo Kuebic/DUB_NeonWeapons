@@ -6,23 +6,49 @@ struct ReplacementPair
 	var class<Object> newClass;
 };
 var array<ReplacementPair> pickupReplacements;
+//var Array< Class<KFVeterancyTypes> > Vet_Array;
 var class<LevelRules> levelRules;
 var KFGameType gameType;
 
 
-function PostBeginPlay() 
+simulated function PostBeginPlay() 
 {
+	Super.PostBeginPlay();
+	
 	gameType= KFGameType(Level.Game);
 	if (gameType == none) 
 	{
 		Destroy();
 		return;
 	}
+	/* //My attempt at modifying perk bonuses... maybe later
+	if (gameType != None)
+	{
+		if (!ClassIsChildOf(gameType.PlayerControllerClass, class'NeonPlayerController'))
+		{
+			gameType.PlayerControllerClass = class'NeonPlayerController';
+			gameType.PlayerControllerClassName = string(class'NeonPlayerController');
+		}
+	}
+	*/
 	AddToPackageMap();
 	SetTimer(1.0, false);
 }
-
-function Timer() 
+/* //My attempt at modifying perk bonuses... maybe later
+static function Class<KFVeterancyTypes> GetVetReplacement(Class<KFVeterancyTypes> VetSkill)
+{
+	local byte i;
+	
+	for (i = 0; i < default.Vet_Array.length; i++) {
+		if (ClassIsChildOf(default.Vet_Array[i], VetSkill)) {
+			return default.Vet_Array[i];
+		}
+	}
+	
+	return VetSkill;
+}
+*/
+simulated function Timer() 
 {
 	gameType.KFLRules.destroy();
 	gameType.KFLRules= spawn(levelRules);
@@ -120,4 +146,10 @@ defaultproperties
 	pickupReplacements(3)=(oldClass=class'KFMod.DualDeaglePickup',newClass=class'DUB_NeonWeapons.Neon_DualDeaglePickup')
 	pickupReplacements(4)=(oldClass=class'KFMod.BullpupPickup',newClass=class'DUB_NeonWeapons.Neon_BullpupPickup')
 	pickupReplacements(5)=(oldClass=class'KFMod.Mac10Pickup',newClass=class'DUB_NeonWeapons.Neon_Mac10Pickup')
+//    Vet_Array(0)=Class'DUB_NeonWeapons.NeonVetSupportSpec'
+//    Vet_Array(1)=Class'DUB_NeonWeapons.NeonVetSharpshooter'
+//    Vet_Array(2)=Class'DUB_NeonWeapons.NeonVetCommando'
+//    Vet_Array(3)=Class'DUB_NeonWeapons.NeonVetBerserker'
+//    Vet_Array(4)=Class'DUB_NeonWeapons.NeonVetFirebug'
+//    Vet_Array(5)=Class'DUB_NeonWeapons.NeonVetDemolitions'
 }

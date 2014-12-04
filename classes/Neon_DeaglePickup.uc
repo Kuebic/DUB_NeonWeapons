@@ -17,7 +17,7 @@ function inventory SpawnCopy(pawn Other)
             MagAmmoRemaining += Neon_Deagle(I).MagAmmoRemaining;
 			I.Destroyed();
 			I.Destroy();
-			Return Super.SpawnCopy(Other);
+			Return Super(KFWeaponPickup).SpawnCopy(Other);
 		}
 	}
 

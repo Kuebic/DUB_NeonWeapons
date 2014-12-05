@@ -2,7 +2,7 @@
 //KFHumanPawn extension to have Cyber Dual MK23s working properly
 //----------------------
 class NeonHumanPawn extends KFHumanPawn;
-/*
+
 function ServerBuyWeapon( Class<Weapon> WClass, float ItemWeight )
 {
     local Inventory I, J;
@@ -56,11 +56,11 @@ function ServerBuyWeapon( Class<Weapon> WClass, float ItemWeight )
             Return;
         }
 
-        if ( I.Class == class'Dualies' )
+        if ( I.Class == class'Neon_Dualies' )
         {
             bHasDual9mms = true;
         }
-        else if ( I.Class == class'DualDeagle' || I.Class == class'GoldenDualDeagle' )
+        else if ( I.Class == class'Neon_DualDeagle' || I.Class == class'GoldenDualDeagle' )
         {
             bHasDualHCs = true;
         }
@@ -70,11 +70,11 @@ function ServerBuyWeapon( Class<Weapon> WClass, float ItemWeight )
         }
     }
 
-    if ( WClass == class'DualDeagle' )
+    if ( WClass == class'Neon_DualDeagle' )
     {
         for ( J = Inventory; J != None; J = J.Inventory )
         {
-            if ( J.class == class'Deagle' )
+            if ( J.class == class'Neon_Deagle' )
             {
                 Price = Price / 2;
                 break;
@@ -120,21 +120,6 @@ function ServerBuyWeapon( Class<Weapon> WClass, float ItemWeight )
         for ( J = Inventory; J != None; J = J.Inventory )
         {
             if ( J.class == class'MK23Pistol' )
-            {
-                Price = Price / 2;
-                break;
-            }
-        }
-
-        bIsDualWeapon = true;
-    }
-	
-	//Added to run the proper Cyber MK23 checks.
-	if ( WClass == class'CyberDualMK23Pistols' )
-    {
-        for ( J = Inventory; J != None; J = J.Inventory )
-        {
-            if ( J.class == class'CyberMK23Pistol' )
             {
                 Price = Price / 2;
                 break;
@@ -230,10 +215,10 @@ function ServerSellWeapon( Class<Weapon> WClass )
                 }
             }
 
-            if ( Dualies(I) != none && DualDeagle(I) == none && Dual44Magnum(I) == none
+            if ( Dualies(I) != none && Neon_DualDeagle(I) == none && Dual44Magnum(I) == none
                 && DualMK23Pistol(I) == none && DualFlareRevolver(I) == none )
             {
-                NewSingle = Spawn(class'Single');
+                NewSingle = Spawn(class'Neon_Single');
                 NewSingle.GiveTo(self);
             }
 
@@ -245,7 +230,7 @@ function ServerSellWeapon( Class<Weapon> WClass )
                 }
                 else
                 {
-                    NewDeagle = Spawn(class'Deagle');
+                    NewDeagle = Spawn(class'Neon_Deagle');
                 }
                 NewDeagle.GiveTo(self);
                 Price = Price / 2;
@@ -262,13 +247,7 @@ function ServerSellWeapon( Class<Weapon> WClass )
 			
             if ( DualMK23Pistol(I) != none )
             {
-				//Added to run the proper Cyber MK23 checks.
-				if( CyberDualMK23Pistols(I) != none ){
-					NewMK23 = Spawn(class'CyberMK23Pistol');
-				}
-				else{
-					NewMK23 = Spawn(class'MK23Pistol');
-				}
+				NewMK23 = Spawn(class'MK23Pistol');
                 NewMK23.GiveTo(self);
                 Price = Price / 2;
                 NewMK23.SellValue = Price;
@@ -338,7 +317,7 @@ function bool ServerBuyAmmo( Class<Ammunition> AClass, bool bOnlyClip )
         return false;
     }
 
-    DBShotty = Boomstick(KW);
+    DBShotty = Neon_Boomstick(KW);
 
     AM.MaxAmmo = AM.default.MaxAmmo;
 
@@ -364,7 +343,7 @@ function bool ServerBuyAmmo( Class<Ammunition> AClass, bool bOnlyClip )
         UsedMagCapacity = KW.default.MagCapacity;
     }
 
-    if( KW.PickupClass == class'HuskGunPickup' || KW.PickupClass == class'CyberHuskGunPickup')
+    if( KW.PickupClass == class'HuskGunPickup')
     {
         UsedMagCapacity = class<HuskGunPickup>(KW.PickupClass).default.BuyClipSize;
     }
@@ -373,7 +352,7 @@ function bool ServerBuyAmmo( Class<Ammunition> AClass, bool bOnlyClip )
     {
         if ( KFPlayerReplicationInfo(PlayerReplicationInfo) != none && KFPlayerReplicationInfo(PlayerReplicationInfo).ClientVeteranSkill != none )
         {
-            if( KW.PickupClass == class'HuskGunPickup' || KW.PickupClass == class'CyberHuskGunPickup')
+            if( KW.PickupClass == class'HuskGunPickup')
             {
                 c = UsedMagCapacity * KFPlayerReplicationInfo(PlayerReplicationInfo).ClientVeteranSkill.static.AddExtraAmmoFor(KFPlayerReplicationInfo(PlayerReplicationInfo), AM.Class);
             }
@@ -428,7 +407,7 @@ function bool ServerBuyAmmo( Class<Ammunition> AClass, bool bOnlyClip )
 
     return true;
 }
-*/
+
 defaultproperties
 {
 }

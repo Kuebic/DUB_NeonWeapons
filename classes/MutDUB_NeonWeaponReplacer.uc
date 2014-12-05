@@ -6,7 +6,7 @@ struct ReplacementPair
 	var class<Object> newClass;
 };
 var array<ReplacementPair> pickupReplacements;
-//var Array< Class<KFVeterancyTypes> > Vet_Array;
+var Array< Class<KFVeterancyTypes> > Vet_Array;
 var class<LevelRules> levelRules;
 var KFGameType gameType;
 
@@ -63,7 +63,7 @@ simulated function Tick(float DeltaTime)
 
 simulated function PostBeginPlay() 
 {
-	//Super.PostBeginPlay();
+	Super.PostBeginPlay();
 	
 	gameType= KFGameType(Level.Game);
 	if (gameType == none) 
@@ -74,7 +74,7 @@ simulated function PostBeginPlay()
 	if (Level.NetMode != NM_Standalone)
 		AddToPackageMap("Dub_NeonWeapons");
 		
-	/* //My attempt at modifying perk bonuses... maybe later
+	//My attempt at modifying perk bonuses... maybe later
 	if (gameType != None)
 	{
 		if (!ClassIsChildOf(gameType.PlayerControllerClass, class'NeonPlayerController'))
@@ -83,10 +83,10 @@ simulated function PostBeginPlay()
 			gameType.PlayerControllerClassName = string(class'NeonPlayerController');
 		}
 	}
-	*/
+	
 	SetTimer(1.0, false);
 }
-/* //My attempt at modifying perk bonuses... maybe later
+//My attempt at modifying perk bonuses... maybe later... thanks Skell
 static function Class<KFVeterancyTypes> GetVetReplacement(Class<KFVeterancyTypes> VetSkill)
 {
 	local byte i;
@@ -99,7 +99,7 @@ static function Class<KFVeterancyTypes> GetVetReplacement(Class<KFVeterancyTypes
 	
 	return VetSkill;
 }
-*/
+
 function Timer() 
 {
 	gameType.KFLRules.destroy();
@@ -212,29 +212,16 @@ defaultproperties
 	pickupReplacements(6)=(oldClass=class'KFMod.KnifePickup',newClass=class'DUB_NeonWeapons.Neon_KnifePickup')
 	pickupReplacements(7)=(oldClass=class'KFMod.MachetePickup',newClass=class'DUB_NeonWeapons.Neon_MachetePickup')
 	pickupReplacements(8)=(oldClass=class'KFMod.AxePickup',newClass=class'DUB_NeonWeapons.Neon_AxePickup')
-	pickupReplacements(9)=(oldClass=class'KFMod.AA12Pickup',newClass=class'DUB_NeonWeapons.Neon_AA12Pickup')
-	pickupReplacements(10)=(oldClass=class'KFMod.BoomStickPickup',newClass=class'DUB_NeonWeapons.Neon_BoomstickPickup')
-	pickupReplacements(11)=(oldClass=class'KFMod.ShotgunPickup',newClass=class'DUB_NeonWeapons.Neon_ShotgunPickup')
-	pickupReplacements(12)=(oldClass=class'KFMod.WinchesterPickup',newClass=class'DUB_NeonWeapons.Neon_WinchesterPickup')
-/*	
-	weaponReplacements(0)=(oldClass=class'KFMod.Single',newClass=class'DUB_NeonWeapons.Neon_Single')
-	weaponReplacements(1)=(oldClass=class'KFMod.Dualies',newClass=class'DUB_NeonWeapons.Neon_Dualies')
-	weaponReplacements(2)=(oldClass=class'KFMod.Deagle',newClass=class'DUB_NeonWeapons.Neon_Deagle')
-	weaponReplacements(3)=(oldClass=class'KFMod.DualDeagle',newClass=class'DUB_NeonWeapons.Neon_DualDeagle')
-	weaponReplacements(4)=(oldClass=class'KFMod.Bullpup',newClass=class'DUB_NeonWeapons.Neon_Bullpup')
-	weaponReplacements(5)=(oldClass=class'KFMod.Mac10MP',newClass=class'DUB_NeonWeapons.Neon_Mac10MP')
-	weaponReplacements(6)=(oldClass=class'KFMod.Knife',newClass=class'DUB_NeonWeapons.Neon_Knife')
-	weaponReplacements(7)=(oldClass=class'KFMod.Machete',newClass=class'DUB_NeonWeapons.Neon_Machete')
-	weaponReplacements(8)=(oldClass=class'KFMod.Axe',newClass=class'DUB_NeonWeapons.Neon_Axe')
-	weaponReplacements(9)=(oldClass=class'KFMod.AA12AutoShotgun',newClass=class'DUB_NeonWeapons.Neon_AA12AutoShotgun')
-	weaponReplacements(10)=(oldClass=class'KFMod.BoomStick',newClass=class'DUB_NeonWeapons.Neon_Boomstick')
-	weaponReplacements(11)=(oldClass=class'KFMod.Shotgun',newClass=class'DUB_NeonWeapons.Neon_Shotgun')
-	weaponReplacements(12)=(oldClass=class'KFMod.Winchester',newClass=class'DUB_NeonWeapons.Neon_Winchester')
-*/	
-//    Vet_Array(0)=Class'DUB_NeonWeapons.NeonVetSupportSpec'
-//    Vet_Array(1)=Class'DUB_NeonWeapons.NeonVetSharpshooter'
-//    Vet_Array(2)=Class'DUB_NeonWeapons.NeonVetCommando'
-//    Vet_Array(3)=Class'DUB_NeonWeapons.NeonVetBerserker'
-//    Vet_Array(4)=Class'DUB_NeonWeapons.NeonVetFirebug'
-//    Vet_Array(5)=Class'DUB_NeonWeapons.NeonVetDemolitions'
+	pickupReplacements(9)=(oldClass=class'KFMod.KatanaPickup',newClass=class'DUB_NeonWeapons.Neon_KatanaPickup')
+	pickupReplacements(10)=(oldClass=class'KFMod.AA12Pickup',newClass=class'DUB_NeonWeapons.Neon_AA12Pickup')
+	pickupReplacements(11)=(oldClass=class'KFMod.BoomStickPickup',newClass=class'DUB_NeonWeapons.Neon_BoomstickPickup')
+	pickupReplacements(12)=(oldClass=class'KFMod.ShotgunPickup',newClass=class'DUB_NeonWeapons.Neon_ShotgunPickup')
+	pickupReplacements(13)=(oldClass=class'KFMod.WinchesterPickup',newClass=class'DUB_NeonWeapons.Neon_WinchesterPickup')
+
+    Vet_Array(0)=Class'DUB_NeonWeapons.NeonVetSupportSpec'
+    Vet_Array(1)=Class'DUB_NeonWeapons.NeonVetSharpshooter'
+    Vet_Array(2)=Class'DUB_NeonWeapons.NeonVetCommando'
+    Vet_Array(3)=Class'DUB_NeonWeapons.NeonVetBerserker'
+    Vet_Array(4)=Class'DUB_NeonWeapons.NeonVetFirebug'
+    Vet_Array(5)=Class'DUB_NeonWeapons.NeonVetDemolitions'
 }

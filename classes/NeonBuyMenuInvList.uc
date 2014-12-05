@@ -4,7 +4,7 @@
 //KFBuyMenuInvList extension to have Cyber Dual MK23s and Husk Gun working properly
 //----------------------
 class NeonBuyMenuInvList extends KFBuyMenuInvList;
-/*
+
 //THIS FUNCTION NEEDS TO BE CHECKED EVERY UPDATE TO ENSURE NO PROBLEMS ARISE.
 function UpdateMyBuyables()
 {
@@ -48,7 +48,7 @@ function UpdateMyBuyables()
     {
 		if ( KFWeapon(CurInv) != none )
         {
-			if ( KFWeapon(CurInv).default.PickupClass == class'DualDeaglePickup' )
+			if ( KFWeapon(CurInv).default.PickupClass == class'Neon_DualDeaglePickup' )
 	    	{
 				bHasDualCannon = true;
 			}
@@ -58,7 +58,7 @@ function UpdateMyBuyables()
 				bHasGoldDualCannon = true;
 			}
 
-			if ( KFWeapon(CurInv).default.PickupClass == class'DualiesPickup' )
+			if ( KFWeapon(CurInv).default.PickupClass == class'Neon_DualiesPickup' )
 	    	{
 				bHasDual = true;
 			}
@@ -99,7 +99,7 @@ function UpdateMyBuyables()
 			continue;
 		}
 
-		if ( CurInv.IsA('DualDeagle') || CurInv.IsA('Dual44Magnum') || CurInv.IsA('DualMK23Pistol')
+		if ( CurInv.IsA('Neon_DualDeagle') || CurInv.IsA('Dual44Magnum') || CurInv.IsA('DualMK23Pistol')
             || CurInv.IsA('DualFlareRevolver') )
 		{
 			DualDivider = 2;
@@ -112,8 +112,8 @@ function UpdateMyBuyables()
 		MyPickup = class<KFWeaponPickup>(KFWeapon(CurInv).default.PickupClass);
 
         // if we already own dualies, we do not need the single 9mm in the list
-        if ( (bHasDual && MyPickup == class'SinglePickup') ||
-			 (bHasDualCannon && MyPickup == class'DeaglePickup') ||
+        if ( (bHasDual && MyPickup == class'Neon_SinglePickup') ||
+			 (bHasDualCannon && MyPickup == class'Neon_DeaglePickup') ||
 			 (bHasGoldDualCannon && MyPickup == class'GoldenDeaglePickup') ||
 			 (bHasDual44 && MyPickup == class'Magnum44Pickup') ||
 			 (bhasDualM23 && MyPickup == class'MK23Pickup') ||
@@ -223,16 +223,18 @@ function UpdateMyBuyables()
 				MyBuyable.ItemPickupClass	= MyPickup;
 				MyBuyable.ItemCost			= (float(MyPickup.default.Cost) * PlayerVeterancy.static.GetCostScaling(KFPRI, MyPickup)) / DualDivider;
 				MyBuyable.ItemAmmoCost		= MyPickup.default.AmmoCost * PlayerVeterancy.static.GetAmmoCostScaling(KFPRI, MyPickup) * PlayerVeterancy.static.GetMagCapacityMod(KFPRI, KFWeapon(CurInv));
-
+/*
 				//ADDED CYBER HUSK TO CHECK
                 if( MyPickup == class'HuskGunPickup' || MyPickup == class'CyberHuskGunPickup')
 				{
     				MyBuyable.ItemFillAmmoCost	= (int(((MaxAmmo - CurAmmo) * float(MyPickup.default.AmmoCost)) / float(MyPickup.default.BuyClipSize))) * PlayerVeterancy.static.GetAmmoCostScaling(KFPRI, MyPickup);
 			    }
-			    else
-			    {
+				
+				else
+*/			    //{
+
     				MyBuyable.ItemFillAmmoCost	= (int(((MaxAmmo - CurAmmo) * float(MyPickup.default.AmmoCost)) / float(KFWeapon(CurInv).default.MagCapacity))) * PlayerVeterancy.static.GetAmmoCostScaling(KFPRI, MyPickup);
-			    }
+			    //}
 				MyBuyable.ItemWeight		= KFWeapon(CurInv).Weight;
 				MyBuyable.ItemPower			= MyPickup.default.PowerValue;
 				MyBuyable.ItemRange			= MyPickup.default.RangeValue;
@@ -319,7 +321,7 @@ function UpdateMyBuyables()
 	//Now Update the list
 	UpdateList();
 }
-*/
+
 defaultproperties
 {
 }

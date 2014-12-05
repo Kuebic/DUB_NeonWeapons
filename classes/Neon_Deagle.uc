@@ -1,6 +1,6 @@
 class Neon_Deagle extends Deagle;
 
-#exec obj load file="DUB_Neon_Weapons.utx"
+#exec obj load file="DUB_NeonWeapons_T.utx"
 
 simulated function bool PutDown()
 {
@@ -14,7 +14,7 @@ simulated function bool PutDown()
 
 DefaultProperties
 {
-	SkinRefs[0] = "DUB_Neon_Weapons.Deagle.Deagle_SHDR"
+	SkinRefs[0] = "DUB_NeonWeapons_T.Deagle.Deagle_SHDR"
 	AttachmentClass=Class'DUB_NeonWeapons.Neon_DeagleAttachment'
 	PickupClass=Class'DUB_NeonWeapons.Neon_DeaglePickup';
 }

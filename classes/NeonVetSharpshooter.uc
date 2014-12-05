@@ -30,15 +30,19 @@ static function float GetReloadSpeedModifier(KFPlayerReplicationInfo KFPRI, KFWe
 		return super.GetReloadSpeedModifier(KFPRI, DualMK23Pistol(Other));
 	return super.GetReloadSpeedModifier(KFPRI, Other);
 }
-
+*/
 static function float GetCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup> Item){
-	if(Item == class'CyberMK23Pickup')
-		return super.GetCostScaling(KFPRI, class'MK23Pickup');
-	else if(Item == class'CyberDualMK23Pickup')
-		return super.GetCostScaling(KFPRI, class'DualMK23Pickup');
+	if(Item == class'Neon_DualiesPickup')
+		return super.GetCostScaling(KFPRI, class'DualiesPickup');
+	else if(Item == class'Neon_DeaglePickup')
+		return super.GetCostScaling(KFPRI, class'DeaglePickup');
+	else if(Item == class'Neon_DualDeaglePickup')
+		return super.GetCostScaling(KFPRI, class'DualDeaglePickup');
+	else if(Item == class'Neon_WinchesterPickup')
+		return super.GetCostScaling(KFPRI, class'WinchesterPickup');
 	return super.GetCostScaling(KFPRI, Item);
 }
-*/
+
 defaultproperties
 {
 }

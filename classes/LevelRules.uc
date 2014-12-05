@@ -1,18 +1,5 @@
 class LevelRules extends KFLevelRules;
-/*
-simulated function bool remove(class<Pickup> pickupClass) 
-{
-	local int i;
-	for(i= 0; i < ItemForSale.Length; i++) 
-	{
-		if (pickupClass == ItemForSale[i]) 
-		{
-			ItemForSale.Remove(i, 1);
-			return true;
-		}
-	}
-	return false;
-}*/
+
 defaultproperties {
 	MediItemForSale[0 ]=Class'KFMod.MP7MPickup'            //Medic
 	MediItemForSale[1 ]=Class'KFMod.BlowerThrowerPickup'   //Medic
@@ -34,21 +21,21 @@ defaultproperties {
 	SuppItemForSale[9 ]=Class'DUB_NeonWeapons.Neon_AA12Pickup'			   	//Support
 	SuppItemForSale[10]=Class'KFMod.GoldenAA12Pickup'      	//Support
 
-	//ShrpItemForSale[0 ]=Class'DUB_NeonWeapons.Neon_SinglePickup'	//Sharpshooter
-	ShrpItemForSale[0 ]=Class'DUB_NeonWeapons.Neon_DualiesPickup'	//Sharpshooter
-	ShrpItemForSale[1 ]=Class'DUB_NeonWeapons.Neon_WinchesterPickup'	   //Sharpshooter
-	ShrpItemForSale[2 ]=Class'KFMod.Magnum44Pickup'		   //Sharpshooter
-	ShrpItemForSale[3 ]=Class'DUB_NeonWeapons.Neon_DeaglePickup'	//Sharpshooter
-	ShrpItemForSale[4 ]=Class'KFMod.GoldenDeaglePickup'    //Sharpshooter
-	ShrpItemForSale[5 ]=Class'KFMod.MK23Pickup'			   //Sharpshooter
-	ShrpItemForSale[6 ]=Class'KFMod.CrossbowPickup'		   //Sharpshooter
-	ShrpItemForSale[7 ]=Class'KFMod.Dual44MagnumPickup'	   //Sharpshooter
-	ShrpItemForSale[8 ]=Class'KFMod.DualMK23Pickup'	       //Sharpshooter
-	ShrpItemForSale[9 ]=Class'DUB_NeonWeapons.Neon_DualDeaglePickup' //Sharpshooter
-	ShrpItemForSale[10]=Class'KFMod.GoldenDualDeaglePickup'//Sharpshooter
-	ShrpItemForSale[11]=Class'KFMod.SPSniperPickup'        //SharpShooter
-	ShrpItemForSale[12]=Class'KFMod.M14EBRPickup'		   //Sharpshooter
-	ShrpItemForSale[13]=Class'KFMod.M99Pickup'			   //Sharpshooter
+	ShrpItemForSale[0 ]=Class'DUB_NeonWeapons.Neon_SinglePickup'	//Sharpshooter
+	ShrpItemForSale[1 ]=Class'DUB_NeonWeapons.Neon_DualiesPickup'	//Sharpshooter
+	ShrpItemForSale[2 ]=Class'DUB_NeonWeapons.Neon_WinchesterPickup'	   //Sharpshooter
+	ShrpItemForSale[3 ]=Class'KFMod.Magnum44Pickup'		   //Sharpshooter
+	ShrpItemForSale[4 ]=Class'DUB_NeonWeapons.Neon_DeaglePickup'	//Sharpshooter
+	ShrpItemForSale[5 ]=Class'KFMod.GoldenDeaglePickup'    //Sharpshooter
+	ShrpItemForSale[6 ]=Class'KFMod.MK23Pickup'			   //Sharpshooter
+	ShrpItemForSale[7 ]=Class'KFMod.CrossbowPickup'		   //Sharpshooter
+	ShrpItemForSale[8 ]=Class'KFMod.Dual44MagnumPickup'	   //Sharpshooter
+	ShrpItemForSale[9 ]=Class'KFMod.DualMK23Pickup'	       //Sharpshooter
+	ShrpItemForSale[10 ]=Class'DUB_NeonWeapons.Neon_DualDeaglePickup' //Sharpshooter
+	ShrpItemForSale[11]=Class'KFMod.GoldenDualDeaglePickup'//Sharpshooter
+	ShrpItemForSale[12]=Class'KFMod.SPSniperPickup'        //SharpShooter
+	ShrpItemForSale[13]=Class'KFMod.M14EBRPickup'		   //Sharpshooter
+	ShrpItemForSale[14]=Class'KFMod.M99Pickup'			   //Sharpshooter
 
 	CommItemForSale[0 ]=Class'DUB_NeonWeapons.Neon_BullpupPickup'//Commando
 	CommItemForSale[1 ]=Class'KFMod.ThompsonPickup'	            //Commando

@@ -1,6 +1,6 @@
 class Neon_DualDeagle extends DualDeagle;
 
-#exec obj load file="DUB_Neon_Weapons.utx"
+#exec obj load file="DUB_NeonWeapons_T.utx"
 
 function GiveTo( pawn Other, optional Pickup Pickup )
 {
@@ -129,7 +129,7 @@ simulated function bool PutDown()
 
 DefaultProperties
 {
-	Skins[0] = Shader'DUB_Neon_Weapons.Deagle.Deagle_SHDR'
+	Skins[0] = Shader'DUB_NeonWeapons_T.Deagle.Deagle_SHDR'
 	AttachmentClass=Class'DUB_NeonWeapons.Neon_DualDeagleAttachment'
 	PickupClass=Class'DUB_NeonWeapons.Neon_DualDeaglePickup';
 }

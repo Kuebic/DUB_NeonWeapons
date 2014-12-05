@@ -1,5 +1,5 @@
 //----------------------
-//Commando perk extension to give the Cyber AA12 and Cyber Vlad their proper bonuses
+//Support perk extension to give the Cyber AA12 and Cyber Vlad their proper bonuses
 //----------------------
 //Super sneaky way to get the cyber weapons' bonuses consistent with their normal counter parts.
 //----------------------
@@ -21,15 +21,17 @@ static function int AddDamage(KFPlayerReplicationInfo KFPRI, KFMonster Injured, 
 		return super.AddDamage(KFPRI, Injured, Instigator, InDamage, class'KFMod.DamTypeNailGun');
 	return super.AddDamage(KFPRI, Injured, Instigator, InDamage, DmgType);
 }
-
+*/
 static function float GetCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup> Item){
-	if(Item == class'CyberVladPickup')
-		return super.GetCostScaling(KFPRI, class'NailGunPickup');
-	else if(Item == class'CyberAA12Pickup')
+	if(Item == class'Neon_ShotgunPickup')
+		return super.GetCostScaling(KFPRI, class'ShotgunPickup');
+	else if(Item == class'Neon_BoomstickPickup')
+		return super.GetCostScaling(KFPRI, class'BoomstickPickup');
+	else if(Item == class'Neon_AA12Pickup')
 		return super.GetCostScaling(KFPRI, class'AA12Pickup');
 	return super.GetCostScaling(KFPRI, Item);
 }
-*/
+
 defaultproperties
 {
 }

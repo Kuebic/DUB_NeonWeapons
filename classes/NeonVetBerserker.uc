@@ -5,14 +5,18 @@
 //----------------------
 class NeonVetBerserker extends KFVetBerserker
 	abstract;
-/*
+
 static function float GetCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup> Item)
 {
-	if (Item == class'CyberMachetePickup')
+	if (Item == class'Neon_MachetePickup')
 		return super.GetCostScaling(KFPRI, class'MachetePickup');
+	else if (Item == class'Neon_AxePickup')
+		return super.GetCostScaling(KFPRI, class'AxePickup');
+	else if (Item == class'Neon_KatanaPickup')
+		return super.GetCostScaling(KFPRI, class'KatanaPickup');
 	return super.GetCostScaling(KFPRI, Item);
 }
-*/
+
 defaultproperties
 {
 }

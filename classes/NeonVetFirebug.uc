@@ -26,13 +26,13 @@ static function int AddDamage(KFPlayerReplicationInfo KFPRI, KFMonster Injured, 
 		return super.AddDamage(KFPRI, Injured, Instigator, InDamage, class'KFMod.DamTypeHuskGunProjectileImpact');
 	return super.AddDamage(KFPRI, Injured, Instigator, InDamage, DmgType);
 }
-
+*/
 static function float GetCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup> Item){
-	if(Item == class'CyberHuskGunPickup')
-		return super.GetCostScaling(KFPRI, class'HuskGunPickup');
+	if(Item == class'Neon_MAC10Pickup')
+		return super.GetCostScaling(KFPRI, class'MAC10Pickup');
 	return super.GetCostScaling(KFPRI, Item);
 }
-*/
+
 defaultproperties
 {
 }

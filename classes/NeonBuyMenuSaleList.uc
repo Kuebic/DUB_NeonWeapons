@@ -4,7 +4,7 @@
 //KFBuyMenuSaleList extension to have Cyber Dual MK23s and Husk Gun working properly
 //----------------------
 class NeonBuyMenuSaleList extends KFBuyMenuSaleList;
-/*
+
 #exec OBJ LOAD FILE=Potato_T.utx
 
 //THIS FUNCTION NEEDS TO BE CHECKED EVERY UPDATE TO ENSURE NO PROBLEMS ARISE.
@@ -50,9 +50,9 @@ function int PopulateBuyables()
                 }
             //}
 
-            if ( class<Deagle>(ForSalePickup.default.InventoryType) != none )
+            if ( class<Neon_Deagle>(ForSalePickup.default.InventoryType) != none )
             {
-                if ( IsVariantInInventory(class'DualDeaglePickup') )
+                if ( IsVariantInInventory(class'Neon_DualDeaglePickup') )
                 {
                     continue;
                 }
@@ -83,8 +83,8 @@ function int PopulateBuyables()
             }
 
             // reduce displayed price of dualies if player owns single
-            if ( ForSalePickup.default.InventoryType == class'DualDeagle' &&
-                 IsInInventory(class'DeaglePickup') )
+            if ( ForSalePickup.default.InventoryType == class'Neon_DualDeagle' &&
+                 IsInInventory(class'Neon_DeaglePickup') )
             {
                 DualDivider = 2;
             }
@@ -105,11 +105,6 @@ function int PopulateBuyables()
             }
             else if(  class<DualFlareRevolver>(ForSalePickup.default.InventoryType) != none &&
                       IsInInventory(class'FlareRevolverPickup') )
-            {
-                DualDivider = 2;
-            }
-			else if(  class<CyberDualMK23Pistols>(ForSalePickup.default.InventoryType) != none &&
-                      IsInInventory(class'CyberMK23Pickup') )
             {
                 DualDivider = 2;
             }
@@ -155,8 +150,8 @@ function int PopulateBuyables()
             {
                 ForSaleBuyable.ItemWeight   = 1.f;
             }
-            else if ( (ForSalePickup == class'DualDeaglePickup' || ForSalePickup == class'GoldenDualDeaglePickup')
-                      && (IsInInventory(class'DeaglePickup') || IsInInventory(class'GoldenDeaglePickup')) )
+            else if ( (ForSalePickup == class'Neon_DualDeaglePickup' || ForSalePickup == class'GoldenDualDeaglePickup')
+                      && (IsInInventory(class'Neon_DeaglePickup') || IsInInventory(class'GoldenDeaglePickup')) )
             {
                 ForSaleBuyable.ItemWeight= ForSalePickup.default.Weight / 2;
             }
@@ -164,8 +159,7 @@ function int PopulateBuyables()
             {
                 ForSaleBuyable.ItemWeight= ForSalePickup.default.Weight / 2;
             }
-            else if ( (ForSalePickup == class'DualMK23Pickup' || ForSalePickup == class'CyberDualMK23Pickup')
-					  && (IsInInventory(class'MK23Pickup') || IsInInventory(class'CyberMK23Pickup')) )
+            else if ( ForSalePickup == class'DualMK23Pickup' && IsInInventory (class'MK23Pickup')) 
             {
                 ForSaleBuyable.ItemWeight= ForSalePickup.default.Weight / 2;
             }
@@ -193,7 +187,7 @@ function int PopulateBuyables()
     }
     return currentIndex;
 }
-*/
+
 defaultproperties
 {
 }

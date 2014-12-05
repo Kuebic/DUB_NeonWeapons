@@ -4,7 +4,7 @@
 // FLIPPITY FLOOPIN TRADER MODIFICATIONS
 //----------------------
 class NeonTabBuyMenu extends KFGui.KFTab_BuyMenu;
-/*
+
 function ShowPanel(bool bShow){
 	Super(UT2K4TabPanel).ShowPanel(bShow);
 
@@ -17,9 +17,9 @@ function ShowPanel(bool bShow){
 	InvSelect.SetPosition(InvBG.winLeft + 7.0 / float(Controller.resX), InvBG.winTop + 55.0 / float(Controller.resY), InvBG.winWidth - 15.0 / float(Controller.resX), InvBG.winHeight - 45.0 / float(Controller.resY), true);
 	SaleSelect.SetPosition(SaleBG.winLeft + 7.0 / float(Controller.resX), SaleBG.winTop + 55.0 / float(Controller.resY), SaleBG.winWidth - 15.0 / float(Controller.resX), SaleBG.winHeight - 63.0 / float(Controller.resY), true);
 }
-*/
+
 defaultproperties
-{/*
+{
      Begin Object Class=NeonBuyMenuInvListBox Name=InventoryBox
          OnCreateComponent=InventoryBox.InternalOnCreateComponent
          WinTop=0.070841
@@ -36,6 +36,6 @@ defaultproperties
          WinWidth=0.325857
          WinHeight=0.674039
      End Object
-     SaleSelect=CWBuyMenuSaleListBox'DUB_NeonWeapons.NeonTabBuyMenu.SaleBox'
+     SaleSelect=NeonBuyMenuSaleListBox'DUB_NeonWeapons.NeonTabBuyMenu.SaleBox'
 */
 }

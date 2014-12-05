@@ -15,77 +15,82 @@ simulated function ClientWeaponSpawned(class<Weapon> WClass, Inventory Inv)
 			
 		case class'Neon_Dualies':
 			class'Neon_Dualies'.static.PreloadAssets(Inv);
-			//class'Neon_DualiesAttachment'.static.PreloadAssets();
+			class'Neon_DualiesFire'.static.PreloadAssets(Level);
+			class'Neon_DualiesAttachment'.static.PreloadAssets();
 			break;
 			
 		case class'Neon_Deagle':
 			class'Neon_Deagle'.static.PreloadAssets(Inv);
-			//class'Neon_DeagleFire'.static.PreloadAssets(Level);
+			class'Neon_DeagleFire'.static.PreloadAssets(Level);
+			class'Neon_DeagleAltFire'.static.PreloadAssets(Level);
 			class'Neon_DeagleAttachment'.static.PreloadAssets();
 			break;
 			
 		case class'Neon_DualDeagle':
 			class'Neon_DualDeagle'.static.PreloadAssets(Inv);
-			//class'Neon_DualDeagleAttachment'.static.PreloadAssets();
+			class'Neon_DualDeagleFire'.static.PreloadAssets(Level);
+			class'Neon_DualDeagleAttachment'.static.PreloadAssets();
 			break;
 			
 		case class'Neon_Bullpup':
 			class'Neon_Bullpup'.static.PreloadAssets(Inv);
-			//class'Neon_BullpupFire'.static.PreloadAssets(Level);
+			class'Neon_BullpupFire'.static.PreloadAssets(Level);
 			class'Neon_BullpupAttachment'.static.PreloadAssets();
 			break;
 			
 		case class'Neon_MAC10MP':
 			class'Neon_MAC10MP'.static.PreloadAssets(Inv);
-			//class'Neon_MAC10Fire'.static.PreloadAssets(Level);
+			class'Neon_MAC10Fire'.static.PreloadAssets(Level);
 			class'Neon_MAC10Attachment'.static.PreloadAssets();
 			break;
 			
 		case class'Neon_Knife':
 			class'Neon_Knife'.static.PreloadAssets(Inv);
-			//class'Neon_KnifeFire'.static.PreloadAssets(Level);
+			class'Neon_KnifeFire'.static.PreloadAssets();
 			class'Neon_KnifeAttachment'.static.PreloadAssets();
 			break;
 			
 		case class'Neon_Machete':
 			class'Neon_Machete'.static.PreloadAssets(Inv);
-			//class'Neon_MacheteFire'.static.PreloadAssets(Level);
+			class'Neon_MacheteFire'.static.PreloadAssets();
 			class'Neon_MacheteAttachment'.static.PreloadAssets();
 			break;
 			
 		case class'Neon_Axe':
 			class'Neon_Axe'.static.PreloadAssets(Inv);
-			//class'Neon_AxeFire'.static.PreloadAssets(Level);
+			class'Neon_AxeFire'.static.PreloadAssets();
 			class'Neon_AxeAttachment'.static.PreloadAssets();
 			break;
 			
 		case class'Neon_Katana':
 			class'Neon_Katana'.static.PreloadAssets(Inv);
-			//class'Neon_KatanaFire'.static.PreloadAssets(Level);
+			class'Neon_KatanaFire'.static.PreloadAssets();
+			class'Neon_KatanaFireB'.static.PreloadAssets();
 			class'Neon_KatanaAttachment'.static.PreloadAssets();
 			break;
 			
 		case class'Neon_AA12AutoShotgun':
 			class'Neon_AA12AutoShotgun'.static.PreloadAssets(Inv);
-			//class'Neon_AA12Fire'.static.PreloadAssets(Level);
+			class'Neon_AA12Fire'.static.PreloadAssets(Level);
 			class'Neon_AA12Attachment'.static.PreloadAssets();
 			break;
 			
 		case class'Neon_BoomStick':
 			class'Neon_BoomStick'.static.PreloadAssets(Inv);
-			//class'Neon_BoomStickFire'.static.PreloadAssets(Level);
+			class'Neon_BoomStickFire'.static.PreloadAssets(Level);
+			class'Neon_BoomStickAltFire'.static.PreloadAssets(Level);
 			class'Neon_BoomStickAttachment'.static.PreloadAssets();
 			break;
 			
 		case class'Neon_Shotgun':
 			class'Neon_Shotgun'.static.PreloadAssets(Inv);
-			//class'Neon_ShotgunFire'.static.PreloadAssets(Level);
+			class'Neon_ShotgunFire'.static.PreloadAssets(Level);
 			class'Neon_ShotgunAttachment'.static.PreloadAssets();
 			break;
 			
 		case class'Neon_Winchester':
 			class'Neon_Winchester'.static.PreloadAssets(Inv);
-			//class'Neon_WinchesterFire'.static.PreloadAssets(Level);
+			class'Neon_WinchesterFire'.static.PreloadAssets(Level);
 			class'Neon_WinchesterAttachment'.static.PreloadAssets();
 			break;
 	}
@@ -104,88 +109,95 @@ simulated function ClientWeaponDestroyed(class<Weapon> WClass)
 			break;
 			
 		case class'Neon_Dualies':
-				class'Neon_Dualies'.static.UnloadAssets();
-				//class'Neon_DualiesAttachment'.static.UnloadAssets();
+			if (class'Neon_Dualies'.static.UnloadAssets()){
+				class'Neon_DualiesFire'.static.UnloadAssets();
+				class'Neon_DualiesAttachment'.static.UnloadAssets();
+			}
 			break;
 			
 		case class'Neon_Deagle':
 			if (class'Neon_Deagle'.static.UnloadAssets()){
-				//class'Neon_DeagleFire'.static.UnloadAssets();
+				class'Neon_DeagleFire'.static.UnloadAssets();
+				class'Neon_DeagleAltFire'.static.UnloadAssets();
 				class'Neon_DeagleAttachment'.static.UnloadAssets();
 			}
 			break;
 			
 		case class'Neon_DualDeagle':
-				class'Neon_DualDeagle'.static.UnloadAssets();
-				//class'Neon_DualDeagleAttachment'.static.UnloadAssets();
+			if (class'Neon_DualDeagle'.static.UnloadAssets()){
+				class'Neon_DualDeagleFire'.static.UnloadAssets();
+				class'Neon_DualDeagleAttachment'.static.UnloadAssets();
+			}
 			break;
 			
 		case class'Neon_Bullpup':
 			if (class'Neon_Bullpup'.static.UnloadAssets()){
-				//class'Neon_BullpupFire'.static.UnloadAssets();
+				class'Neon_BullpupFire'.static.UnloadAssets();
 				class'Neon_BullpupAttachment'.static.UnloadAssets();
 			}
 			break;
 			
 		case class'Neon_MAC10MP':
 			if (class'Neon_MAC10MP'.static.UnloadAssets()){
-				//class'Neon_MAC10Fire'.static.UnloadAssets();
+				class'Neon_MAC10Fire'.static.UnloadAssets();
 				class'Neon_MAC10Attachment'.static.UnloadAssets();
 			}
 			break;
 			
 		case class'Neon_Knife':
 			if (class'Neon_Knife'.static.UnloadAssets()){
-				//class'Neon_KnifeFire'.static.UnloadAssets();
+				class'Neon_KnifeFire'.static.UnloadAssets();
 				class'Neon_KnifeAttachment'.static.UnloadAssets();
 			}
 			break;
 			
 		case class'Neon_Machete':
 			if (class'Neon_Machete'.static.UnloadAssets()){
-				//class'Neon_MacheteFire'.static.UnloadAssets();
+				class'Neon_MacheteFire'.static.UnloadAssets();
 				class'Neon_MacheteAttachment'.static.UnloadAssets();
 			}
 			break;
 			
 		case class'Neon_Axe':
 			if (class'Neon_Axe'.static.UnloadAssets()){
-				//class'Neon_AxeFire'.static.UnloadAssets();
+				class'Neon_AxeFire'.static.UnloadAssets();
 				class'Neon_AxeAttachment'.static.UnloadAssets();
 			}
 			break;
 			
 		case class'Neon_Katana':
 			if (class'Neon_Katana'.static.UnloadAssets()){
-				//class'Neon_KatanaFire'.static.UnloadAssets();
+				class'Neon_KatanaFire'.static.UnloadAssets();
+				class'Neon_KatanaFireB'.static.UnloadAssets();
 				class'Neon_KatanaAttachment'.static.UnloadAssets();
 			}
 			break;
 			
 		case class'Neon_AA12AutoShotgun':
 			if (class'Neon_AA12AutoShotgun'.static.UnloadAssets()){
-				//class'Neon_AA12Fire'.static.UnloadAssets();
+				class'Neon_AA12Fire'.static.UnloadAssets();
 				class'Neon_AA12Attachment'.static.UnloadAssets();
 			}
 			break;
 			
 		case class'Neon_BoomStick':
 			if (class'Neon_BoomStick'.static.UnloadAssets()){
-				//class'Neon_BoomStickFire'.static.UnloadAssets();
+				class'Neon_BoomStickFire'.static.UnloadAssets();
+				class'Neon_BoomStickAltFire'.static.UnloadAssets();
 				class'Neon_BoomStickAttachment'.static.UnloadAssets();
 			}
 			break;
 			
 		case class'Neon_Shotgun':
 			if (class'Neon_Shotgun'.static.UnloadAssets()){
-				//class'Neon_ShotgunFire'.static.UnloadAssets();
+				class'Neon_ShotgunFire'.static.UnloadAssets();
 				class'Neon_ShotgunAttachment'.static.UnloadAssets();
 			}
 			break;
 			
 		case class'Neon_Winchester':
 			if (class'Neon_Winchester'.static.UnloadAssets()){
-				//class'Neon_WinchesterFire'.static.UnloadAssets();
+				class'Neon_WinchesterFire'.static.UnloadAssets();
 				class'Neon_WinchesterAttachment'.static.UnloadAssets();
 			}
 			break;

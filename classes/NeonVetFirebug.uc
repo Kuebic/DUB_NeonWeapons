@@ -33,6 +33,22 @@ static function float GetCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup
 	return super.GetCostScaling(KFPRI, Item);
 }
 
+// Give Extra Items as default
+static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
+{
+	// If Level 5, give them a Flame Thrower
+	if ( KFPRI.ClientVeteranSkillLevel >= 5 )
+	{
+		KFHumanPawn(P).CreateInventoryVeterancy("KFMod.FlameThrower", default.StartingWeaponSellPriceLevel5);
+	}
+
+	// If Level 6, add Body Armor
+	if ( KFPRI.ClientVeteranSkillLevel == 6 )
+	{
+		P.ShieldStrength = 100;
+	}
+}
+
 defaultproperties
 {
 }

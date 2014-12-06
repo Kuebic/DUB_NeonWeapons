@@ -43,6 +43,21 @@ static function float GetCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup
 	return super.GetCostScaling(KFPRI, Item);
 }
 
+// Give Extra Items as default
+static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
+{
+	// If Level 5, give them a  Lever Action Rifle
+	if ( KFPRI.ClientVeteranSkillLevel == 5 )
+	{
+		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeapons.Neon_Winchester", default.StartingWeaponSellPriceLevel5);
+	}
+
+	// If Level 6, give them a Crossbow
+	if ( KFPRI.ClientVeteranSkillLevel == 6 )
+	{
+		KFHumanPawn(P).CreateInventoryVeterancy("KFMod.Crossbow", default.StartingWeaponSellPriceLevel6);
+	}
+}
 defaultproperties
 {
 }

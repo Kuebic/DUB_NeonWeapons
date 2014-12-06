@@ -17,6 +17,28 @@ static function float GetCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup
 	return super.GetCostScaling(KFPRI, Item);
 }
 
+// Give Extra Items as default
+static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
+{
+	// If Level 5, give them Machete
+	if ( KFPRI.ClientVeteranSkillLevel == 5 )
+	{
+		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeapons.Neon_Machete", default.StartingWeaponSellPriceLevel5);
+	}
+
+	// If Level 6, give them an Axe
+	if ( KFPRI.ClientVeteranSkillLevel == 6 )
+	{
+		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeapons.Neon_Axe", default.StartingWeaponSellPriceLevel6);
+	}
+
+	// If Level 6, give them Body Armor(Removed from Suicidal and HoE in Balance Round 7)
+	if ( KFPRI.Level.Game.GameDifficulty < 5.0 && KFPRI.ClientVeteranSkillLevel == 6 )
+	{
+		P.ShieldStrength = 100;
+	}
+}
+
 defaultproperties
 {
 }

@@ -6,5 +6,11 @@ DefaultProperties
 {
 	Skins[0] = Shader'DUB_NeonWeapons_T.Shotgun.Shotgun_SHDR';
 	AttachmentClass=Class'DUB_NeonWeapons.Neon_ShotgunAttachment';
-	PickupClass=Class'DUB_NeonWeapons.Neon_ShotgunPickup';
+	PickupClass=Class'DUB_NeonWeapons.Neon_ShotgunPickup'
+	TraderInfoTexture=Texture'DUB_NeonWEapons_T.Trader.Trader_NeonShotgun'
+	ItemName="Neon Shotgun"
+	LightHue=30
+	LightSaturation=45
+	LightBrightness=120.000000
+	LightRadius=10.000000;
 }

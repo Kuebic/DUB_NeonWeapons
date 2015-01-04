@@ -29,15 +29,15 @@ static function float GetCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup
 		return super.GetCostScaling(KFPRI, class'PipeBombPickup');
 	return super.GetCostScaling(KFPRI, Item);
 }
-
+*/
 // Change the cost of particular ammo
 static function float GetAmmoCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup> Item)
 {
-	if (Item == class'CyberPipePickup')
-		return super.GetAmmoCostScaling(KFPRI, class'PipeBombPickup');
+	if (Item == class'Neon_M79Pickup')
+		return super.GetAmmoCostScaling(KFPRI, class'M79Pickup');
 	return super.GetAmmoCostScaling(KFPRI, Item);
 }
-*/
+
 
 // Give Extra Items as default
 static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
@@ -53,7 +53,7 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
 	{
 	    // use level 5 sell price for the pipe bombs so the demo doesn't start with two things he can sell
 		KFHumanPawn(P).CreateInventoryVeterancy("KFMod.PipeBombExplosive", default.StartingWeaponSellPriceLevel5);
-		KFHumanPawn(P).CreateInventoryVeterancy("KFMod.M79GrenadeLauncher", default.StartingWeaponSellPriceLevel6);
+		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeapons.Neon_M79GL", default.StartingWeaponSellPriceLevel6);
 	}
 }
 

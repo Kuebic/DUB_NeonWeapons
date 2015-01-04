@@ -5,5 +5,8 @@ class Neon_ShotgunPickup extends ShotgunPickup;
 DefaultProperties
 {
 	Skins[0]=Shader'DUB_NeonWeapons_T.Shotgun.Shotgun_3rd_SHDR'
-	InventoryType=Class'DUB_NeonWeapons.Neon_Shotgun';
+	InventoryType=Class'DUB_NeonWeapons.Neon_Shotgun'
+	ItemName="Neon Shotgun"
+	ItemShortName="Neon Shotgun"
+	PickupMessage="You got the Neon Shotgun";
 }

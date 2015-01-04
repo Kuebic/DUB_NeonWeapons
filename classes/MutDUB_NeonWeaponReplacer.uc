@@ -29,10 +29,16 @@ simulated function Tick(float DeltaTime)
 				KFLR.ShrpItemForSale[i] = class'Dub_NeonWeapons.Neon_DualDeaglePickup';
 			if (KFLR.ShrpItemForSale[i] == class'KFMod.WinchesterPickup')
 				KFLR.ShrpItemForSale[i] = Class'DUB_NeonWeapons.Neon_WinchesterPickup';
+			if (KFLR.ShrpItemForSale[i] == class'KFMod.CrossbowPickup')
+				KFLR.ShrpItemForSale[i] = Class'DUB_NeonWeapons.Neon_CrossbowPickup';
+			if (KFLR.ShrpItemForSale[i] == class'KFMod.M14EBRPickup')
+				KFLR.ShrpItemForSale[i] = Class'DUB_NeonWeapons.Neon_M14Pickup';
 		}
 		for (i = 0; i < KFLR.CommItemForSale.length; i++){
 			if (KFLR.CommItemForSale[i] == class'KFMod.BullpupPickup')
 				KFLR.CommItemForSale[i] = class'Dub_NeonWeapons.Neon_BullpupPickup';
+			if (KFLR.CommItemForSale[i] == class'KFMod.AK47Pickup')
+				KFLR.CommItemForSale[i] = class 'DUB_NeonWeapons.Neon_AK47Pickup';
 		}
 		for (i = 0; i < KFLR.FireItemForSale.length; i++){
 			if (KFLR.FireItemForSale[i] == class'KFMod.MAC10Pickup')
@@ -56,7 +62,10 @@ simulated function Tick(float DeltaTime)
 			if (KFLR.SuppItemForSale[i] == class'KFMod.AA12Pickup')
 				KFLR.SuppItemForSale[i] = class'Dub_NeonWeapons.Neon_AA12Pickup';
 		}
-		
+		for (i = 0; i < KFLR.DemoItemForSale.length; i++){
+			if (KFLR.SuppItemForSale[i] == class'KFMod.M79Pickup')
+				KFLR.SuppItemForSale[i] = class'Dub_NeonWeapons.Neon_M79Pickup';
+		}
 	}
 	Disable('Tick');
 }
@@ -217,7 +226,12 @@ defaultproperties
 	pickupReplacements(11)=(oldClass=class'KFMod.BoomStickPickup',newClass=class'DUB_NeonWeapons.Neon_BoomstickPickup')
 	pickupReplacements(12)=(oldClass=class'KFMod.ShotgunPickup',newClass=class'DUB_NeonWeapons.Neon_ShotgunPickup')
 	pickupReplacements(13)=(oldClass=class'KFMod.WinchesterPickup',newClass=class'DUB_NeonWeapons.Neon_WinchesterPickup')
-
+	pickupReplacements(14)=(oldClass=class'KFMod.CrossbowPickup',newClass=class'DUB_NeonWeapons.Neon_CrossbowPickup')
+	pickupReplacements(15)=(oldClass=class'KFMod.AK47Pickup',newClass=class'DUB_NeonWeapons.Neon_AK47Pickup')
+	pickupReplacements(16)=(oldClass=class'KFMod.M14EBRPickup',newClass=class'DUB_NeonWeapons.Neon_M14Pickup')
+	pickupReplacements(17)=(oldClass=class'KFMod.M79Pickup',newClass=class'DUB_NeonWeapons.Neon_M79Pickup')
+	
+	
     Vet_Array(0)=Class'DUB_NeonWeapons.NeonVetSupportSpec'
     Vet_Array(1)=Class'DUB_NeonWeapons.NeonVetSharpshooter'
     Vet_Array(2)=Class'DUB_NeonWeapons.NeonVetCommando'

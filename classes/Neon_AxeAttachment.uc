@@ -4,5 +4,5 @@ class Neon_AxeAttachment extends AxeAttachment;
 
 DefaultProperties
 {
-	Skins[0]=Texture'DUB_NeonWeapons_T.Axe.Axe_3rd';
+	Skins[0]=Shader'DUB_NeonWeapons_T.Axe.Axe_3rd_shdr';
 }

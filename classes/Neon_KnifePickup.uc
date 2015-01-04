@@ -4,6 +4,9 @@ class Neon_KnifePickup extends KnifePickup;
 
 DefaultProperties
 {
-	Skins[0]=Texture'DUB_NeonWeapons_T.Katana.Katana_3rd';
-	InventoryType=Class'DUB_NeonWeapons.Neon_Knife';
+	Skins[0]=Shader'DUB_NeonWeapons_T.Knife.Knife_3rd_shdr';
+	InventoryType=Class'DUB_NeonWeapons.Neon_Knife'
+	ItemName="Neon Knife"
+	ItemShortName="Neon Knife"
+	PickupMessage="You got the Neon Knife";
 }

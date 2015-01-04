@@ -4,8 +4,10 @@ class Neon_Axe extends Axe;
 
 DefaultProperties
 {
-	Skins[0] = Combiner'DUB_NeonWeapons_T.Axe.Axe_cmb'
-	BloodyMaterial = Combiner'DUB_NeonWeapons_T.Axe.Axe_bloody_cmb'
+	Skins[0] = Shader'DUB_NeonWeapons_T.Axe.Axe_shdr'
+	BloodyMaterial = Shader'DUB_NeonWeapons_T.Axe.Axe_bloody_shdr'
 	AttachmentClass=Class'DUB_NeonWeapons.Neon_AxeAttachment'
-	PickupClass=Class'DUB_NeonWeapons.Neon_AxePickup';
+	PickupClass=Class'DUB_NeonWeapons.Neon_AxePickup'
+	TraderInfoTexture=Texture'DUB_NeonWeapons_T.Trader.Trader_NeonAxe'
+	ItemName="Neon Axe";
 }

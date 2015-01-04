@@ -4,5 +4,5 @@ class Neon_KnifeAttachment extends KnifeAttachment;
 
 DefaultProperties
 {
-	Skins[0]=Texture'DUB_NeonWeapons_T.Knife.Knife_3rd';
+	Skins[0]=Shader'DUB_NeonWeapons_T.Knife.Knife_3rd_shdr';
 }

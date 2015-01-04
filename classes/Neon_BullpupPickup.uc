@@ -4,6 +4,9 @@ class Neon_BullpupPickup extends BullpupPickup;
 
 DefaultProperties
 {
-Skins[0]=Shader'DUB_NeonWeapons_T.Bullpup.Bullpup_3rd_SHDR';
-InventoryType=Class'DUB_NeonWeapons.Neon_Bullpup';
+	Skins[0]=Shader'DUB_NeonWeapons_T.Bullpup.Bullpup_3rd_SHDR';
+	InventoryType=Class'DUB_NeonWeapons.Neon_Bullpup'
+	ItemName="Neon Bullpup"
+	ItemShortName="Neon Bullpup"
+	PickupMessage="You got the Neon Bullpup";
 }

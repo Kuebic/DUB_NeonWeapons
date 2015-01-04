@@ -50,7 +50,7 @@ function int PopulateBuyables()
                 }
             //}
 
-            if ( class<Neon_Deagle>(ForSalePickup.default.InventoryType) != none )
+            if ( class<NeonDeagle>(ForSalePickup.default.InventoryType) != none )
             {
                 if ( IsVariantInInventory(class'Neon_DualDeaglePickup') )
                 {

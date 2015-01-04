@@ -33,8 +33,10 @@ simulated function InitMaterials()
 */
 DefaultProperties
 {
-	Skins[0] = Combiner'DUB_NeonWeapons_T.Machete.Machete_cmb'
-	BloodyMaterial = Combiner'DUB_NeonWeapons_T.Machete.Machete_bloody_cmb'
+	Skins[0] = Shader'DUB_NeonWeapons_T.Machete.Machete_shdr'
+	BloodyMaterial = Shader'DUB_NeonWeapons_T.Machete.Machete_bloody_shdr'
 	AttachmentClass=Class'DUB_NeonWeapons.Neon_MacheteAttachment'
-	PickupClass=Class'DUB_NeonWeapons.Neon_MachetePickup';
+	PickupClass=Class'DUB_NeonWeapons.Neon_MachetePickup'
+	TraderInfoTexture=Texture'DUB_NeonWEapons_T.Trader.Trader_NeonMachete'
+	ItemName="Neon Machete";
 }

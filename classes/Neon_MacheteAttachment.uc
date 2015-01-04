@@ -4,5 +4,5 @@ class Neon_MacheteAttachment extends MacheteAttachment;
 
 DefaultProperties
 {
-	Skins[0]=Texture'DUB_NeonWeapons_T.Machete.Machete_3rd';
+	Skins[0]=Shader'DUB_NeonWeapons_T.Machete.Machete_3rd_shdr';
 }

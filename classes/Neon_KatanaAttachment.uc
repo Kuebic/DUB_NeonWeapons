@@ -4,5 +4,5 @@ class Neon_KatanaAttachment extends KatanaAttachment;
 
 DefaultProperties
 {
-	Skins[0]=Texture'DUB_NeonWeapons_T.Katana.Katana_3rd';
+	Skins[0]=Shader'DUB_NeonWeapons_T.Katana.Katana_3rd_shdr';
 }

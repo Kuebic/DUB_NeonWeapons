@@ -5,5 +5,8 @@ class Neon_DualDeaglePickup extends DualDeaglePickup;
 DefaultProperties
 {
 	Skins[0]=Shader'DUB_NeonWeapons_T.Deagle.Deagle_3rd_SHDR';
-	InventoryType=Class'DUB_NeonWeapons.Neon_DualDeagle';
+	InventoryType=Class'DUB_NeonWeapons.Neon_DualDeagle'
+	ItemName="Neon Dual Handcannons"
+	ItemShortName="Neon Dual Handcannons"
+	PickupMessage="You got the Neon Dual Handcannons";
 }

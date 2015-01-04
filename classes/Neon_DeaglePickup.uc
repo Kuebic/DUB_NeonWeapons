@@ -59,5 +59,8 @@ function bool CheckCanCarry(KFHumanPawn Hm) {
 DefaultProperties
 {
 	Skins[0]=Shader'DUB_NeonWeapons_T.Deagle.Deagle_3rd_SHDR';
-	InventoryType=Class'DUB_NeonWeapons.Neon_Deagle';
+	InventoryType=Class'DUB_NeonWeapons.Neon_Deagle'
+	ItemName="Neon Handcannon"
+	ItemShortName="Neon Handcannon"
+	PickupMessage="You got the Neon Handcannon";
 }

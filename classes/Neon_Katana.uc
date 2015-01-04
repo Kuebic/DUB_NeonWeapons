@@ -4,8 +4,10 @@ class Neon_Katana extends Katana;
 
 DefaultProperties
 {
-	SkinRefs[0] = "DUB_NeonWeapons_T.Katana.Katana_cmb"
-	BloodyMaterialRef = "DUB_NeonWeapons_T.Katana.Katana_bloody_cmb"
+	SkinRefs[0] = "DUB_NeonWeapons_T.Katana.Katana_shdr"
+	BloodyMaterialRef = "DUB_NeonWeapons_T.Katana.Katana_bloody_shdr"
 	AttachmentClass=Class'DUB_NeonWeapons.Neon_KatanaAttachment'
-	PickupClass=Class'DUB_NeonWeapons.Neon_KatanaPickup';
+	PickupClass=Class'DUB_NeonWeapons.Neon_KatanaPickup'
+	TraderInfoTexture=Texture'DUB_NeonWeapons_T.Trader.Trader_NeonKatana'
+	ItemName="Neon Katana";
 }

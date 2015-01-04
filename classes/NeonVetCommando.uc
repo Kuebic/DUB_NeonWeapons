@@ -39,6 +39,8 @@ static function float ModifyRecoilSpread(KFPlayerReplicationInfo KFPRI, WeaponFi
 static function float GetCostScaling(KFPlayerReplicationInfo KFPRI, class<Pickup> Item){
 	if(Item == class'Neon_BullpupPickup')
 		return super.GetCostScaling(KFPRI, class'BullpupPickup');
+	else if (Item == class'Neon_AK47Pickup')
+		return super.GetCostScaling(KFPRI, class'AK47Pickup');
 	return super.GetCostScaling(KFPRI, Item);
 }
 
@@ -54,7 +56,7 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
 	// If Level 6, give them an AK47
 	if ( KFPRI.ClientVeteranSkillLevel == 6 )
 	{
-		KFHumanPawn(P).CreateInventoryVeterancy("KFMod.NeonAK47AssaultRifle", default.StartingWeaponSellPriceLevel6);
+		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeapons.Neon_AK47AR", default.StartingWeaponSellPriceLevel6);
 	}
 }
 

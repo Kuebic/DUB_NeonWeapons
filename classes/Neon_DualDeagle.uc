@@ -131,5 +131,13 @@ DefaultProperties
 {
 	Skins[0] = Shader'DUB_NeonWeapons_T.Deagle.Deagle_SHDR'
 	AttachmentClass=Class'DUB_NeonWeapons.Neon_DualDeagleAttachment'
-	PickupClass=Class'DUB_NeonWeapons.Neon_DualDeaglePickup';
+	PickupClass=Class'DUB_NeonWeapons.Neon_DualDeaglePickup'
+	TraderInfoTexture=Texture'DUB_NeonWeapons_T.Trader.Trader_NeonDualDeagle'
+	FireModeClass(0)=Class'DUB_NeonWeapons.Neon_DualDeagleFire'
+	ItemName="Neon Dual Handcannon"
+	LightHue=135
+	LightSaturation=45
+	LightBrightness=120.000000
+	LightRadius=10.000000
+	LightPeriod=3;;
 }

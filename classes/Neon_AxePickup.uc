@@ -4,6 +4,9 @@ class Neon_AxePickup extends AxePickup;
 
 DefaultProperties
 {
-	Skins[0]=Texture'DUB_NeonWeapons_T.Axe.Axe_3rd';
-	InventoryType=Class'DUB_NeonWeapons.Neon_Axe';
+	Skins[0]=Shader'DUB_NeonWeapons_T.Axe.Axe_3rd_shdr';
+	InventoryType=Class'DUB_NeonWeapons.Neon_Axe'
+	ItemName="Neon Axe"
+	ItemShortName="Neon Axe"
+	PickupMessage="You got the Neon Axe";
 }

@@ -28,20 +28,20 @@ defaultproperties {
 	ShrpItemForSale[4 ]=Class'DUB_NeonWeapons.Neon_DeaglePickup'	//Sharpshooter
 	ShrpItemForSale[5 ]=Class'KFMod.GoldenDeaglePickup'    //Sharpshooter
 	ShrpItemForSale[6 ]=Class'KFMod.MK23Pickup'			   //Sharpshooter
-	ShrpItemForSale[7 ]=Class'KFMod.CrossbowPickup'		   //Sharpshooter
+	ShrpItemForSale[7 ]=Class'DUB_NeonWeapons.Neon_CrossbowPickup'		   //Sharpshooter
 	ShrpItemForSale[8 ]=Class'KFMod.Dual44MagnumPickup'	   //Sharpshooter
 	ShrpItemForSale[9 ]=Class'KFMod.DualMK23Pickup'	       //Sharpshooter
 	ShrpItemForSale[10 ]=Class'DUB_NeonWeapons.Neon_DualDeaglePickup' //Sharpshooter
 	ShrpItemForSale[11]=Class'KFMod.GoldenDualDeaglePickup'//Sharpshooter
 	ShrpItemForSale[12]=Class'KFMod.SPSniperPickup'        //SharpShooter
-	ShrpItemForSale[13]=Class'KFMod.M14EBRPickup'		   //Sharpshooter
+	ShrpItemForSale[13]=Class'DUB_NeonWeapons.Neon_M14Pickup'		   //Sharpshooter
 	ShrpItemForSale[14]=Class'KFMod.M99Pickup'			   //Sharpshooter
 
 	CommItemForSale[0 ]=Class'DUB_NeonWeapons.Neon_BullpupPickup'//Commando
 	CommItemForSale[1 ]=Class'KFMod.ThompsonPickup'	            //Commando
 	CommItemForSale[2 ]=Class'KFMod.SPThompsonPickup'	        //Commando
 	CommItemForSale[3 ]=Class'KFMod.ThompsonDrumPickup'         //Commando
-	CommItemForSale[4 ]=Class'KFMod.AK47Pickup'			        //Commando
+	CommItemForSale[4 ]=Class'DUB_NeonWeapons.Neon_AK47Pickup'			        //Commando
 	CommItemForSale[5 ]=Class'KFMod.GoldenAK47Pickup'			//Commando
 	CommItemForSale[6 ]=Class'KFMod.NeonAK47Pickup'			    //Commando
 	CommItemForSale[7 ]=Class'KFMod.M4Pickup'			        //Commando
@@ -71,7 +71,7 @@ defaultproperties {
    	FireItemForSale[5 ]=Class'KFMod.TrenchgunPickup'			//Firebug
    	FireItemForSale[6 ]=Class'KFMod.HuskGunPickup'				//Firebug
 
-   	DemoItemForSale[0 ]=Class'KFMod.M79Pickup'					//Demolition
+   	DemoItemForSale[0 ]=Class'DUB_NeonWeapons.Neon_M79Pickup'					//Demolition
    	DemoItemForSale[1 ]=Class'KFMod.GoldenM79Pickup'		    //Demolition
 	DemoItemForSale[2 ]=Class'KFMod.SPGrenadePickup'            //Demolition
 	DemoItemForSale[3 ]=Class'KFMod.PipeBombPickup'				//Demolition

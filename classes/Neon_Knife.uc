@@ -4,8 +4,10 @@ class Neon_Knife extends Knife;
 
 DefaultProperties
 {
-	Skins[0] = Combiner'DUB_NeonWeapons_T.Knife.Knife_cmb'
-	BloodyMaterial = Combiner'DUB_NeonWeapons_T.Knife.Knife_bloody_cmb'
+	Skins[0] = Shader'DUB_NeonWeapons_T.Knife.Knife_shdr'
+	BloodyMaterial = Shader'DUB_NeonWeapons_T.Knife.Knife_bloody_shdr'
 	AttachmentClass=Class'DUB_NeonWeapons.Neon_KnifeAttachment'
-	PickupClass=Class'DUB_NeonWeapons.Neon_KnifePickup';
+	PickupClass=Class'DUB_NeonWeapons.Neon_KnifePickup'
+	TraderInfoTexture=Texture'DUB_NeonWeapons_T.Trader.Trader_NeonKnife'
+	ItemName="Neon Knife";
 }

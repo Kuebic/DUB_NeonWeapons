@@ -4,6 +4,9 @@ class Neon_MachetePickup extends MachetePickup;
 
 DefaultProperties
 {
-	Skins[0]=Texture'DUB_NeonWeapons_T.Machete.Machete_3rd';
-	InventoryType=Class'DUB_NeonWeapons.Neon_Machete';
+	Skins[0]=Shader'DUB_NeonWeapons_T.Machete.Machete_3rd_shdr';
+	InventoryType=Class'DUB_NeonWeapons.Neon_Machete'
+	ItemName="Neon Machete"
+	ItemShortName="Neon Machete"
+	PickupMessage="You got the Neon Machete";
 }

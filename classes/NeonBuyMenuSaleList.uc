@@ -1,7 +1,7 @@
 //----------------------
-//CWBuyMenuSaleList
+//NeonBuyMenuSaleList
 //----------------------
-//KFBuyMenuSaleList extension to have Cyber Dual MK23s and Husk Gun working properly
+//KFBuyMenuSaleList extension to have Neon weapons working properly
 //----------------------
 class NeonBuyMenuSaleList extends KFBuyMenuSaleList;
 
@@ -50,7 +50,7 @@ function int PopulateBuyables()
                 }
             //}
 
-            if ( class<NeonDeagle>(ForSalePickup.default.InventoryType) != none )
+            if ( class<Neon_Deagle>(ForSalePickup.default.InventoryType) != none )
             {
                 if ( IsVariantInInventory(class'Neon_DualDeaglePickup') )
                 {

@@ -1,7 +1,7 @@
 //----------------------
-//Sharpshooter perk extension to give the Cyber Husk Gun proper bonuses
+//Sharpshooter perk extension to give the Neon weapons proper bonuses
 //----------------------
-//Super sneaky way to get the cyber weapons' bonuses consistent with their normal counter parts.
+//Super sneaky way to get the Neon weapons' bonuses consistent with their normal counter parts.
 //----------------------
 class NeonVetFirebug extends KFVetFirebug
 	abstract;

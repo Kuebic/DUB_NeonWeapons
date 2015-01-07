@@ -1,10 +1,10 @@
 class Neon_Deagle extends Deagle;
 
-#exec obj load file="DUB_NeonWeapons_T.utx"
+#exec obj load file="DUB_NeonWeaponsV1_0_T.utx"
 
 simulated function bool PutDown()
 {
-	if ( Instigator.PendingWeapon.class == class'DUB_NeonWeapons.Neon_DualDeagle' )
+	if ( Instigator.PendingWeapon.class == class'DUB_NeonWeaponsV1_0.Neon_DualDeagle' )
 	{
 		bIsReloading = false;
 	}
@@ -14,11 +14,11 @@ simulated function bool PutDown()
 
 DefaultProperties
 {
-	SkinRefs[0] = "DUB_NeonWeapons_T.Deagle.Deagle_SHDR"
-	AttachmentClass=Class'DUB_NeonWeapons.Neon_DeagleAttachment'
-	PickupClass=Class'DUB_NeonWeapons.Neon_DeaglePickup'
-	TraderInfoTexture=Texture'DUB_NeonWeapons_T.Trader.Trader_NeonHandcannon'
-	FireModeClass(0)=Class'DUB_NeonWeapons.Neon_DeagleFire'
+	SkinRefs[0] = "DUB_NeonWeaponsV1_0_T.Deagle.Deagle_SHDR"
+	AttachmentClass=Class'DUB_NeonWeaponsV1_0.Neon_DeagleAttachment'
+	PickupClass=Class'DUB_NeonWeaponsV1_0.Neon_DeaglePickup'
+	TraderInfoTexture=Texture'DUB_NeonWeaponsV1_0_T.Trader.Trader_NeonHandcannon'
+	FireModeClass(0)=Class'DUB_NeonWeaponsV1_0.Neon_DeagleFire'
 	ItemName="Neon Handcannon"
 	LightHue=135
 	LightSaturation=45

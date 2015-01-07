@@ -1,12 +1,12 @@
 class Neon_MAC10Attachment extends MAC10Attachment;
 
-#exec obj load file="DUB_NeonWeapons_T.utx"
+#exec obj load file="DUB_NeonWeaponsV1_0_T.utx"
 
 DefaultProperties
 {
-	Skins[0]=Shader'DUB_NeonWeapons_T.MAC10.MAC10_3rd_SHDR'
-	mMuzFlashClass=Class'DUB_NeonEffects.Neon_MuzzleFlash3rdMP'
-	mTracerClass=Class'DUB_NeonWeapons.Neon_SingleTracer'
+	Skins[0]=Shader'DUB_NeonWeaponsV1_0_T.MAC10.MAC10_3rd_SHDR'
+	mMuzFlashClass=Class'DUB_NeonEffectsV1_0.Neon_MuzzleFlash3rdMP'
+	mTracerClass=Class'DUB_NeonWeaponsV1_0.Neon_SingleTracer'
 	LightHue=135
 	LightSaturation=45
 	LightBrightness=120.000000

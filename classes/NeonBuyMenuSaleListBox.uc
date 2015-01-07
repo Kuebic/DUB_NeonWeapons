@@ -1,11 +1,11 @@
 //----------------------
-//CWBuyMenuSaleListBox
+//NeonBuyMenuSaleListBox
 //----------------------
-//KFBuyMenuSaleListBox extension to have Cyber Dual MK23s and Husk Gun working properly
+//KFBuyMenuSaleListBox extension to have Neon weapons working properly
 //----------------------
 class NeonBuyMenuSaleListBox extends KFBuyMenuSaleListBox;
 
 defaultproperties
 {
-     DefaultListClass="DUB_NeonWeapons.NeonBuyMenuSaleList"
+     DefaultListClass="DUB_NeonWeaponsV1_0.NeonBuyMenuSaleList"
 }

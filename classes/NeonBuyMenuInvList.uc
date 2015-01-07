@@ -1,7 +1,7 @@
 //----------------------
-//CWBuyMenuInvList
+//NeonBuyMenuInvList
 //----------------------
-//KFBuyMenuInvList extension to have Cyber Dual MK23s and Husk Gun working properly
+//KFBuyMenuInvList extension to have Neon weapons working properly
 //----------------------
 class NeonBuyMenuInvList extends KFBuyMenuInvList;
 
@@ -223,15 +223,7 @@ function UpdateMyBuyables()
 				MyBuyable.ItemPickupClass	= MyPickup;
 				MyBuyable.ItemCost			= (float(MyPickup.default.Cost) * PlayerVeterancy.static.GetCostScaling(KFPRI, MyPickup)) / DualDivider;
 				MyBuyable.ItemAmmoCost		= MyPickup.default.AmmoCost * PlayerVeterancy.static.GetAmmoCostScaling(KFPRI, MyPickup) * PlayerVeterancy.static.GetMagCapacityMod(KFPRI, KFWeapon(CurInv));
-/*
-				//ADDED CYBER HUSK TO CHECK
-                if( MyPickup == class'HuskGunPickup' || MyPickup == class'CyberHuskGunPickup')
-				{
-    				MyBuyable.ItemFillAmmoCost	= (int(((MaxAmmo - CurAmmo) * float(MyPickup.default.AmmoCost)) / float(MyPickup.default.BuyClipSize))) * PlayerVeterancy.static.GetAmmoCostScaling(KFPRI, MyPickup);
-			    }
-				
-				else
-*/			    //{
+			    //{
 
     				MyBuyable.ItemFillAmmoCost	= (int(((MaxAmmo - CurAmmo) * float(MyPickup.default.AmmoCost)) / float(KFWeapon(CurInv).default.MagCapacity))) * PlayerVeterancy.static.GetAmmoCostScaling(KFPRI, MyPickup);
 			    //}

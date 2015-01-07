@@ -1,7 +1,7 @@
 //----------------------
-//Berserker perk extension to give the Cyber Machete bonuses
+//Berserker perk extension to give the Neon weapons its proper bonuses
 //----------------------
-//Super sneaky way to get the cyber weapons' bonuses consistent with their normal counter parts.
+//Super sneaky way to get the Neon weapons' bonuses consistent with their normal counter parts.
 //----------------------
 class NeonVetBerserker extends KFVetBerserker
 	abstract;
@@ -23,13 +23,13 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
 	// If Level 5, give them Machete
 	if ( KFPRI.ClientVeteranSkillLevel == 5 )
 	{
-		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeapons.Neon_Machete", default.StartingWeaponSellPriceLevel5);
+		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeaponsV1_0.Neon_Machete", default.StartingWeaponSellPriceLevel5);
 	}
 
 	// If Level 6, give them an Axe
 	if ( KFPRI.ClientVeteranSkillLevel == 6 )
 	{
-		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeapons.Neon_Axe", default.StartingWeaponSellPriceLevel6);
+		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeaponsV1_0.Neon_Axe", default.StartingWeaponSellPriceLevel6);
 	}
 
 	// If Level 6, give them Body Armor(Removed from Suicidal and HoE in Balance Round 7)

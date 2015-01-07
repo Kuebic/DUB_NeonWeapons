@@ -1,5 +1,5 @@
 //----------------------
-//KFHumanPawn extension to have Cyber Dual MK23s working properly
+//KFHumanPawn extension to have Neon weapons working properly
 //----------------------
 class NeonHumanPawn extends KFHumanPawn;
 

@@ -1,5 +1,5 @@
 //----------------------
-//KFTab_BuyMenu extension to have Cyber Dual MK23s and Husk Gun working properly
+//KFTab_BuyMenu extension to have Neon weapons working properly
 //----------------------
 // FLIPPITY FLOOPIN TRADER MODIFICATIONS
 //----------------------
@@ -27,7 +27,7 @@ defaultproperties
          WinWidth=0.328204
          WinHeight=0.521856
      End Object
-     InvSelect=NeonBuyMenuInvListBox'DUB_NeonWeapons.NeonTabBuyMenu.InventoryBox'
+     InvSelect=NeonBuyMenuInvListBox'DUB_NeonWeaponsV1_0.NeonTabBuyMenu.InventoryBox'
 
      Begin Object Class=NeonBuyMenuSaleListBox Name=SaleBox
          OnCreateComponent=SaleBox.InternalOnCreateComponent
@@ -36,6 +36,6 @@ defaultproperties
          WinWidth=0.325857
          WinHeight=0.674039
      End Object
-     SaleSelect=NeonBuyMenuSaleListBox'DUB_NeonWeapons.NeonTabBuyMenu.SaleBox'
+     SaleSelect=NeonBuyMenuSaleListBox'DUB_NeonWeaponsV1_0.NeonTabBuyMenu.SaleBox'
 */
 }

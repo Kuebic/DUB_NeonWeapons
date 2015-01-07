@@ -1,7 +1,7 @@
 //----------------------
-//Commando perk extension to give the Cyber SCARMK17 its proper bonuses
+//Commando perk extension to give the Neon weapons its proper bonuses
 //----------------------
-//Super sneaky way to get the cyber weapons' bonuses consistent with their normal counter parts.
+//Super sneaky way to get the Neon weapons' bonuses consistent with their normal counter parts.
 //----------------------
 class NeonVetCommando extends KFVetCommando abstract;
 
@@ -50,13 +50,13 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
 	// If Level 5, give them Bullpup
 	if ( KFPRI.ClientVeteranSkillLevel == 5 )
 	{
-		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeapons.Neon_Bullpup", default.StartingWeaponSellPriceLevel5);
+		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeaponsV1_0.Neon_Bullpup", default.StartingWeaponSellPriceLevel5);
 	}
 
 	// If Level 6, give them an AK47
 	if ( KFPRI.ClientVeteranSkillLevel == 6 )
 	{
-		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeapons.Neon_AK47AR", default.StartingWeaponSellPriceLevel6);
+		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeaponsV1_0.Neon_AK47AR", default.StartingWeaponSellPriceLevel6);
 	}
 }
 

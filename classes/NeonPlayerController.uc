@@ -210,7 +210,7 @@ function ShowBuyMenu(string wlTag,float maxweight)
 	StopForceFeedback();  // jdf - no way to pause feedback
 
 	// Open menu
-	ClientOpenMenu("Dub_NeonWeapons.NeonGUIBuyMenu",,wlTag,string(maxweight));
+	ClientOpenMenu("DUB_NeonWeaponsV1_0.NeonGUIBuyMenu",,wlTag,string(maxweight));
 }
 */
 function SelectVeterancy(Class<KFVeterancyTypes> VetSkill, optional bool bForceChange) {
@@ -235,7 +235,7 @@ function SelectVeterancy(Class<KFVeterancyTypes> VetSkill, optional bool bForceC
 			}
 		}
 		
-		PRI.ClientVeteranSkill = Class'MutDUB_NeonWeaponReplacer'.static.GetVetReplacement(VetSkill);
+		PRI.ClientVeteranSkill = Class'MutDUB_NeonWeaponReplacerV1_0'.static.GetVetReplacement(VetSkill);
 		PRI.clientVeteranSkillLevel = KFSteamStatsAndAchievements(SteamStatsAndAchievements).PerkHighestLevelAvailable(VetSkill.default.perkIndex);
 		if(KFHumanPawn(Pawn) != None) {
 			KFHumanPawn(Pawn).VeterancyChanged();
@@ -256,5 +256,5 @@ function SetPawnClass(string inClass, string inCharacter) {
 defaultproperties
 {
      SelectedVeterancy=Class'KFMod.KFVetFieldMedic'
-     PawnClass=Class'Dub_NeonWeapons.NeonHumanPawn'
+     PawnClass=Class'DUB_NeonWeaponsV1_0.NeonHumanPawn'
 }

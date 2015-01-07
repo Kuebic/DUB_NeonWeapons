@@ -10,5 +10,6 @@ DefaultProperties
 	ItemShortName="Neon Dual Handcannons"
 	PickupMessage="You got the Neon Dual Handcannons"
 	
-	VariantClasses[0]=class'KFMod.GoldenDualDeaglePickup';
+	VariantClasses[0]=class'KFMod.GoldenDualDeaglePickup'
+	VariantClasses[1]=class'KFMod.DualDeaglePickup';
 }

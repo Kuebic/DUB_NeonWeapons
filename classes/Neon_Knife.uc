@@ -9,5 +9,7 @@ DefaultProperties
 	AttachmentClass=Class'DUB_NeonWeaponsV1_0.Neon_KnifeAttachment'
 	PickupClass=Class'DUB_NeonWeaponsV1_0.Neon_KnifePickup'
 	TraderInfoTexture=Texture'DUB_NeonWeaponsV1_0_T.Trader.Trader_NeonKnife'
-	ItemName="Neon Knife";
+	ItemName="Neon Knife"
+	GroupOffset=1
+	Priority=45;
 }

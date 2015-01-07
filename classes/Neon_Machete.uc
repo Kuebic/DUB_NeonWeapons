@@ -9,5 +9,7 @@ DefaultProperties
 	AttachmentClass=Class'DUB_NeonWeaponsV1_0.Neon_MacheteAttachment'
 	PickupClass=Class'DUB_NeonWeaponsV1_0.Neon_MachetePickup'
 	TraderInfoTexture=Texture'DUB_NeonWeaponsV1_0_T.Trader.Trader_NeonMachete'
-	ItemName="Neon Machete";
+	ItemName="Neon Machete"
+	GroupOffset=2
+	Priority=50;
 }

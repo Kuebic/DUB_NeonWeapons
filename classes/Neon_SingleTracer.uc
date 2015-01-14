@@ -45,11 +45,11 @@ defaultproperties
          StartSizeRange=(X=(Min=10.000000,Max=10.000000),Y=(Min=3.000000,Max=3.000000))
          ScaleSizeByVelocityMultiplier=(X=0.001000)
          DrawStyle=PTDS_Brighten
-         Texture=Texture'DUB_NeonWeaponsV1_0_T.Effects.KFTracerShot_blue'
+         Texture=Texture'DUB_NeonWeapons_T.Effects.KFTracerShot_blue'
          LifetimeRange=(Min=0.100000,Max=0.100000)
          StartVelocityRange=(X=(Min=10000.000000,Max=10000.000000))
      End Object
-     Emitters(0)=SpriteEmitter'DUB_NeonWeaponsV1_0.Neon_SingleTracer.SpriteEmitter13'
+     Emitters(0)=SpriteEmitter'DUB_NeonWeapons.Neon_SingleTracer.SpriteEmitter13'
 
      bNoDelete=False
      bHardAttach=True

@@ -1,6 +1,6 @@
 class Neon_DualDeagle extends DualDeagle;
 
-#exec obj load file="DUB_NeonWeaponsV1_0_T.utx"
+#exec obj load file="DUB_NeonWeapons_T.utx"
 
 function GiveTo( pawn Other, optional Pickup Pickup )
 {
@@ -39,7 +39,7 @@ function GiveTo( pawn Other, optional Pickup Pickup )
 	}
 	else
 	{
-		MagAmmoRemaining = Clamp(MagAmmoRemaining + Class'DUB_NeonWeaponsV1_0.Neon_Deagle'.Default.MagCapacity, 0, MagCapacity);
+		MagAmmoRemaining = Clamp(MagAmmoRemaining + Class'DUB_NeonWeapons.Neon_Deagle'.Default.MagCapacity, 0, MagCapacity);
 	}
 
 	Super(Weapon).GiveTo(Other, Pickup);
@@ -53,7 +53,7 @@ function GiveTo( pawn Other, optional Pickup Pickup )
 
 function bool HandlePickupQuery( pickup Item )
 {
-	if ( Item.InventoryType==Class'DUB_NeonWeaponsV1_0.Neon_Deagle' || Item.InventoryType==Class'GoldenDeagle' )
+	if ( Item.InventoryType==Class'DUB_NeonWeapons.Neon_Deagle' || Item.InventoryType==Class'GoldenDeagle' )
 	{
 		if( LastHasGunMsgTime < Level.TimeSeconds && PlayerController(Instigator.Controller) != none )
 		{
@@ -93,14 +93,14 @@ function DropFrom(vector StartLocation)
 	{
 		OtherAmmo = AmmoThrown / 2;
 		AmmoThrown -= OtherAmmo;
-		I = Spawn(Class'DUB_NeonWeaponsV1_0.Neon_Deagle');
+		I = Spawn(Class'DUB_NeonWeapons.Neon_Deagle');
 		I.GiveTo(Instigator);
 		Weapon(I).Ammo[0].AmmoAmount = OtherAmmo;
 		Deagle(I).MagAmmoRemaining = MagAmmoRemaining / 2;
 		MagAmmoRemaining = Max(MagAmmoRemaining-Deagle(I).MagAmmoRemaining,0);
 	}
 
-	Pickup = Spawn(Class'DUB_NeonWeaponsV1_0.Neon_DeaglePickup',,, StartLocation);
+	Pickup = Spawn(Class'DUB_NeonWeapons.Neon_DeaglePickup',,, StartLocation);
 
 	if ( Pickup != None )
 	{
@@ -119,7 +119,7 @@ function DropFrom(vector StartLocation)
 
 simulated function bool PutDown()
 {
-	if ( Instigator.PendingWeapon.class == class'DUB_NeonWeaponsV1_0.Neon_Deagle' )
+	if ( Instigator.PendingWeapon.class == class'DUB_NeonWeapons.Neon_Deagle' )
 	{
 		bIsReloading = false;
 	}
@@ -129,11 +129,11 @@ simulated function bool PutDown()
 
 DefaultProperties
 {
-	Skins[0] = Shader'DUB_NeonWeaponsV1_0_T.Deagle.Deagle_SHDR'
-	AttachmentClass=Class'DUB_NeonWeaponsV1_0.Neon_DualDeagleAttachment'
-	PickupClass=Class'DUB_NeonWeaponsV1_0.Neon_DualDeaglePickup'
-	TraderInfoTexture=Texture'DUB_NeonWeaponsV1_0_T.Trader.Trader_NeonDualDeagle'
-	FireModeClass(0)=Class'DUB_NeonWeaponsV1_0.Neon_DualDeagleFire'
+	Skins[0] = Shader'DUB_NeonWeapons_T.Deagle.Deagle_SHDR'
+	AttachmentClass=Class'DUB_NeonWeapons.Neon_DualDeagleAttachment'
+	PickupClass=Class'DUB_NeonWeapons.Neon_DualDeaglePickup'
+	TraderInfoTexture=Texture'DUB_NeonWeapons_T.Trader.Trader_NeonDualDeagle'
+	FireModeClass(0)=Class'DUB_NeonWeapons.Neon_DualDeagleFire'
 	ItemName="Neon Dual Handcannon"
 	LightHue=135
 	LightSaturation=45

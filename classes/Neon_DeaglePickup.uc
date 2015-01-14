@@ -1,6 +1,6 @@
 class Neon_DeaglePickup extends DeaglePickup;
 
-#exec obj load file="DUB_NeonWeaponsV1_0_T.utx"
+#exec obj load file="DUB_NeonWeapons_T.utx"
 
 function inventory SpawnCopy(pawn Other)
 {
@@ -12,7 +12,7 @@ function inventory SpawnCopy(pawn Other)
 		{
 			if( Inventory != none )
 				Inventory.Destroy();
-			InventoryType = Class'DUB_NeonWeaponsV1_0.Neon_DualDeagle';
+			InventoryType = Class'DUB_NeonWeapons.Neon_DualDeagle';
             AmmoAmount[0] += Neon_Deagle(I).AmmoAmount(0);
             MagAmmoRemaining += Neon_Deagle(I).MagAmmoRemaining;
 			I.Destroyed();
@@ -30,12 +30,12 @@ function bool CheckCanCarry(KFHumanPawn Hm) {
 	local bool bHasHandCannon;
 	
 	for ( CurInv = Hm.Inventory; CurInv != none; CurInv = CurInv.Inventory ) {
-		if ( KFWeapon(CurInv) != none && KFWeapon(CurInv).class == class'DUB_NeonWeaponsV1_0.Neon_DualDeagle' ) {
+		if ( KFWeapon(CurInv) != none && KFWeapon(CurInv).class == class'DUB_NeonWeapons.Neon_DualDeagle' ) {
 			bHasHandCannon = true;
 		}
 	}
 
-	if ( !Hm.CanCarry(Class<KFWeapon>(InventoryType).Default.Weight) && Class<KFWeapon>(InventoryType) != class'DUB_NeonWeaponsV1_0.Neon_DualDeagle') {
+	if ( !Hm.CanCarry(Class<KFWeapon>(InventoryType).Default.Weight) && Class<KFWeapon>(InventoryType) != class'DUB_NeonWeapons.Neon_DualDeagle') {
 		if ( LastCantCarryTime < Level.TimeSeconds && PlayerController(Hm.Controller) != none ) {
 			LastCantCarryTime = Level.TimeSeconds + 0.5;
 			PlayerController(Hm.Controller).ReceiveLocalizedMessage(Class'KFMainMessages', 2);
@@ -44,7 +44,7 @@ function bool CheckCanCarry(KFHumanPawn Hm) {
 		return false;
 	}
 	
-	if ( Class<KFWeapon>(InventoryType) == class'DUB_NeonWeaponsV1_0.Neon_DualDeagle' ) {
+	if ( Class<KFWeapon>(InventoryType) == class'DUB_NeonWeapons.Neon_DualDeagle' ) {
 		if ( !bHasHandCannon && !Hm.CanCarry(Class<KFWeapon>(InventoryType).Default.Weight) ) {
 			LastCantCarryTime = Level.TimeSeconds + 0.5;
 			PlayerController(Hm.Controller).ReceiveLocalizedMessage(Class'KFMainMessages', 2);
@@ -58,8 +58,8 @@ function bool CheckCanCarry(KFHumanPawn Hm) {
 
 DefaultProperties
 {
-	Skins[0]=Shader'DUB_NeonWeaponsV1_0_T.Deagle.Deagle_3rd_SHDR';
-	InventoryType=Class'DUB_NeonWeaponsV1_0.Neon_Deagle'
+	Skins[0]=Shader'DUB_NeonWeapons_T.Deagle.Deagle_3rd_SHDR';
+	InventoryType=Class'DUB_NeonWeapons.Neon_Deagle'
 	ItemName="Neon Handcannon"
 	ItemShortName="Neon Handcannon"
 	PickupMessage="You got the Neon Handcannon"

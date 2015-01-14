@@ -93,6 +93,32 @@ simulated function ClientWeaponSpawned(class<Weapon> WClass, Inventory Inv)
 			//class'Neon_WinchesterFire'.static.PreloadAssets(Level);
 			//class'Neon_WinchesterAttachment'.static.PreloadAssets();
 			//break;
+			
+		case class'Neon_M14EBR':
+			class'Neon_M14EBR'.static.PreloadAssets(Inv);
+			class'Neon_M14Fire'.static.PreloadAssets(Level);
+			class'Neon_M14Attachment'.static.PreloadAssets();
+			break;
+			
+		case class'Neon_M79GL':
+			class'Neon_M79GL'.static.PreloadAssets(Inv);
+			class'Neon_M79Fire'.static.PreloadAssets(Level);
+			class'M79GrenadeProjectile'.static.PreloadAssets();
+			class'Neon_M79Attachment'.static.PreloadAssets();
+			break;
+			
+		case class'Neon_Crossbow':
+			class'Neon_Crossbow'.static.PreloadAssets(Inv);
+			class'CrossbowArrow'.static.PreloadAssets();
+			class'Neon_CrossbowFire'.static.PreloadAssets(Level);
+			class'Neon_CrossbowAttachment'.static.PreloadAssets();
+			break;
+		
+		case class'Neon_AK47AR':
+			class'Neon_AK47AR'.static.PreloadAssets(Inv);
+			class'Neon_AK47Fire'.static.PreloadAssets(Level);
+			class'Neon_AK47Attachment'.static.PreloadAssets();
+			break;
 	}
 	super.ClientWeaponSpawned(WClass, Inv);
 }
@@ -201,6 +227,38 @@ simulated function ClientWeaponDestroyed(class<Weapon> WClass)
 			//	class'Neon_WinchesterAttachment'.static.UnloadAssets();
 			//}
 			//break;
+			
+		case class'Neon_M14EBR':
+			if ( class'Neon_M14EBR'.static.UnloadAssets() )
+			{
+				class'Neon_M14Fire'.static.UnloadAssets();
+				class'Neon_M14Attachment'.static.UnloadAssets();
+			}
+			break;
+			
+		case class'Neon_M79GL':
+			if (class'Neon_M79GL'.static.UnloadAssets()){
+				class'Neon_M79Fire'.static.UnloadAssets();
+				class'M79GrenadeProjectile'.static.UnloadAssets();
+				class'Neon_M79Attachment'.static.UnloadAssets();
+				}
+			break;
+			
+		case class'Neon_Crossbow':
+			if (class'Neon_Crossbow'.static.UnloadAssets()){
+				class'CrossbowArrow'.static.UnloadAssets();
+				class'Neon_CrossbowFire'.static.UnloadAssets();
+				class'Neon_CrossbowAttachment'.static.UnloadAssets();
+				}
+			break;
+		
+		case class'Neon_AK47AR':
+			if ( class'Neon_AK47AR'.static.UnloadAssets() )
+			{
+				class'Neon_AK47Fire'.static.UnloadAssets();
+				class'Neon_AK47Attachment'.static.UnloadAssets();
+			}
+			break;
 	}
 	super.ClientWeaponDestroyed(WClass);
 }
@@ -210,7 +268,7 @@ function ShowBuyMenu(string wlTag,float maxweight)
 	StopForceFeedback();  // jdf - no way to pause feedback
 
 	// Open menu
-	ClientOpenMenu("DUB_NeonWeaponsV1_0.NeonGUIBuyMenu",,wlTag,string(maxweight));
+	ClientOpenMenu("DUB_NeonWeapons.NeonGUIBuyMenu",,wlTag,string(maxweight));
 }
 */
 function SelectVeterancy(Class<KFVeterancyTypes> VetSkill, optional bool bForceChange) {
@@ -235,7 +293,7 @@ function SelectVeterancy(Class<KFVeterancyTypes> VetSkill, optional bool bForceC
 			}
 		}
 		
-		PRI.ClientVeteranSkill = Class'MutDUB_NeonWeaponReplacerV1_0'.static.GetVetReplacement(VetSkill);
+		PRI.ClientVeteranSkill = Class'MutDUB_NeonWeaponReplacer'.static.GetVetReplacement(VetSkill);
 		PRI.clientVeteranSkillLevel = KFSteamStatsAndAchievements(SteamStatsAndAchievements).PerkHighestLevelAvailable(VetSkill.default.perkIndex);
 		if(KFHumanPawn(Pawn) != None) {
 			KFHumanPawn(Pawn).VeterancyChanged();
@@ -256,5 +314,5 @@ function SetPawnClass(string inClass, string inCharacter) {
 defaultproperties
 {
      SelectedVeterancy=Class'KFMod.KFVetFieldMedic'
-     PawnClass=Class'DUB_NeonWeaponsV1_0.NeonHumanPawn'
+     PawnClass=Class'DUB_NeonWeapons.NeonHumanPawn'
 }

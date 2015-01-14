@@ -20,13 +20,13 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
 	// If Level 5, give them Assault Shotgun
 	if ( KFPRI.ClientVeteranSkillLevel == 5 )
 	{
-		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeaponsV1_0.Neon_Shotgun", default.StartingWeaponSellPriceLevel5);
+		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeapons.Neon_Shotgun", default.StartingWeaponSellPriceLevel5);
 	}
 
 	// If Level 6, give them Hunting Shotgun
 	if ( KFPRI.ClientVeteranSkillLevel == 6 )
 	{
-		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeaponsV1_0.Neon_BoomStick", default.StartingWeaponSellPriceLevel6);
+		KFHumanPawn(P).CreateInventoryVeterancy("DUB_NeonWeapons.Neon_BoomStick", default.StartingWeaponSellPriceLevel6);
 	}
 }
 defaultproperties

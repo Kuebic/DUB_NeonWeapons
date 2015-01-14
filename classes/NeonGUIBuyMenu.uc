@@ -7,5 +7,5 @@ class NeonGUIBuyMenu extends GUIBuyMenu;
 
 defaultproperties
 {
-     PanelClass(0)="DUB_NeonWeaponsV1_0.NeonTabBuyMenu"
+     PanelClass(0)="DUB_NeonWeapons.NeonTabBuyMenu"
 }

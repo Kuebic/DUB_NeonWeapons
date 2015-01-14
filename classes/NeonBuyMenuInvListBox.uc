@@ -7,5 +7,5 @@ class NeonBuyMenuInvListBox extends KFBuyMenuInvListBox;
 
 defaultproperties
 {
-     DefaultListClass="DUB_NeonWeaponsV1_0.NeonBuyMenuInvList"
+     DefaultListClass="DUB_NeonWeapons.NeonBuyMenuInvList"
 }
